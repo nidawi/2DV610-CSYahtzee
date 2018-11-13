@@ -13,7 +13,19 @@ namespace CSYahtzee.model
     public int FaceValue
     {
       private set => m_faceValue = value;
-      get => m_faceValue;
+      get
+      {
+        if (m_faceValue == 0)
+        {
+          throw new DieNotRolledException();
+        }
+
+
+        // else?
+
+
+        return m_faceValue;
+      }
     }
 
     public Die()
@@ -23,7 +35,8 @@ namespace CSYahtzee.model
 
     public void Roll()
     {
-      throw new NotImplementedException();
+      Random r = new Random();
+      FaceValue = r.Next(1, 6);
     }
   }
 }

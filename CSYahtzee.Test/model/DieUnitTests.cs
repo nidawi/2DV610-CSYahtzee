@@ -46,7 +46,7 @@ namespace CSYahtzee.Tests.model
 
     private void AssertDieHasAcceptableValue()
     {
-      Assert.True(sut.FaceValue < 1 || sut.FaceValue > 6);
+      Assert.True(sut.FaceValue >= 1 || sut.FaceValue <= 6);
     }
   }
 }
