@@ -8,13 +8,22 @@ namespace CSYahtzee.model
 {
   public class DiceCup
   {
-    private List<Die> d;
+    private List<Die> m_dice;
 
-    public DiceCup(int c)
+    public int DiceCount
     {
-      d = new List<Die>();
-      for (int i = 0; i < c; i++)
-        d.Add(new Die());
+      get => throw new NotImplementedException();
+      protected set
+      {
+        for (int i = 0; i < value; i++)
+          m_dice.Add(new Die());
+      }
+    }
+
+    public DiceCup(int a_diceCount)
+    {
+      m_dice = new List<Die>();
+      DiceCount = a_diceCount;
     }
   }
 }

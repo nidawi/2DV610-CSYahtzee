@@ -27,7 +27,5 @@ namespace CSYahtzee.Tests.model
     {
       Assert.True(sut != null);
     }
-
-
   }
 }
