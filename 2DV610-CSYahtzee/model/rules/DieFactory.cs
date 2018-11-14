@@ -8,6 +8,14 @@ namespace CSYahtzee.model.rules
 {
   public class DieFactory : IDieFactory
   {
-    public Die Die => throw new NotImplementedException();
+    public Die Die
+    {
+      get
+      {
+        Die die;
+        die = new Die();
+        return die;
+      }
+    }
   }
 }
