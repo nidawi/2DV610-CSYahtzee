@@ -8,14 +8,6 @@ namespace CSYahtzee.model.rules
 {
   public class DieFactory : IDieFactory
   {
-    public Die Die
-    {
-      get
-      {
-        Die die;
-        die = new Die();
-        return die;
-      }
-    }
+    public Die Die => new Die();
   }
 }
