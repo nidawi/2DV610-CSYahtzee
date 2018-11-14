@@ -12,15 +12,7 @@ namespace CSYahtzee.model
 
     public int DiceCount
     {
-      get
-      {
-        int sum = 0;
-        for (int i = 0; i < m_dice.Count; i++)
-        {
-          sum++;
-        }
-        return sum;
-      }
+      get => m_dice.Count;
       protected set
       {
         if (value < 0)
