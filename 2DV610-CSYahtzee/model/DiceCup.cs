@@ -23,6 +23,11 @@ namespace CSYahtzee.model
       }
     }
 
+    public IReadOnlyList<int> DiceFaceValues
+    {
+      get => throw new NotImplementedException();
+    }
+
     public DiceCup(int a_diceCount)
     {
       m_dice = new List<Die>();

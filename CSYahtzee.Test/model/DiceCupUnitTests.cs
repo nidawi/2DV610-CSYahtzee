@@ -44,5 +44,6 @@ namespace CSYahtzee.Tests.model
       Assert.Equal(m_diceCount, sut.DiceCount);
     }
 
+
   }
 }
