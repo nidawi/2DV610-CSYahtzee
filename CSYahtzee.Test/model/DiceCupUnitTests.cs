@@ -27,5 +27,15 @@ namespace CSYahtzee.Tests.model
     {
       Assert.True(sut != null);
     }
+
+    [Fact]
+    public void ConstructorShouldThrowWithUnacceptableInput()
+    {
+      Assert.Throws<InvalidDiceCountException>(delegate ()
+      {
+        sut = new DiceCup(-37);
+      });
+    }
+
   }
 }
