@@ -8,6 +8,9 @@ namespace CSYahtzee.model
 {
   public class DiceCup
   {
-
+    public DiceCup(int c)
+    {
+      throw new NotImplementedException();
+    }
   }
 }
