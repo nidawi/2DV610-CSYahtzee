@@ -11,6 +11,7 @@ namespace CSYahtzee.Tests.model
   public class DiceCupUnitTests : IDisposable
   {
     private DiceCup sut;
+    private int m_diceCount = 5;
 
     public DiceCupUnitTests()
     {
@@ -19,7 +20,7 @@ namespace CSYahtzee.Tests.model
 
     public void Dispose()
     {
-      sut = new DiceCup(5);
+      sut = new DiceCup(m_diceCount);
     }
 
     [Fact]
@@ -33,8 +34,14 @@ namespace CSYahtzee.Tests.model
     {
       Assert.Throws<InvalidDiceCountException>(delegate ()
       {
-        sut = new DiceCup(-37);
+        sut = new DiceCup(-m_diceCount);
       });
+    }
+
+    [Fact]
+    public void ShouldReturnCorrectDiceCount()
+    {
+      Assert.Equal(m_diceCount, sut.DiceCount);
     }
 
   }
