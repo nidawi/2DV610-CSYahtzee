@@ -15,7 +15,8 @@ namespace CSYahtzee.model
       get => throw new NotImplementedException();
       protected set
       {
-        if (value < 0) throw new InvalidDiceCountException();
+        if (value < 0)
+          throw new InvalidDiceCountException();
 
         for (int i = 0; i < value; i++)
           m_dice.Add(new Die());
