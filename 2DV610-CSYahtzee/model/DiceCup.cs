@@ -8,9 +8,13 @@ namespace CSYahtzee.model
 {
   public class DiceCup
   {
+    private List<Die> d;
+
     public DiceCup(int c)
     {
-      throw new NotImplementedException();
+      d = new List<Die>();
+      for (int i = 0; i < c; i++)
+        d.Add(new Die());
     }
   }
 }
