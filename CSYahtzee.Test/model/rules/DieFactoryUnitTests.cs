@@ -5,6 +5,7 @@ using System.Text;
 using CSYahtzee.model;
 using CSYahtzee.model.rules;
 using Xunit;
+using Moq;
 
 namespace CSYahtzee.Tests.model.rules
 {
@@ -25,7 +26,7 @@ namespace CSYahtzee.Tests.model.rules
     [Fact]
     public void ShouldReturnADie()
     {
-      Die die = sut.Die;
+      IDie die = sut.Die;
       Assert.True(die is Die);
     }
   }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSYahtzee.model
 {
-  public class Die
+  public class Die : IDie
   {
     private int m_faceValue;
     private Random m_randomizer = null;

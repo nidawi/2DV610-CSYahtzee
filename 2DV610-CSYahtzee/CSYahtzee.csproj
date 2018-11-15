@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="model\DiceCup.cs" />
     <Compile Include="model\Die.cs" />
+    <Compile Include="model\IDiceCup.cs" />
+    <Compile Include="model\IDie.cs" />
     <Compile Include="model\ModelExceptions.cs" />
     <Compile Include="model\rules\DieFactory.cs" />
     <Compile Include="model\rules\IDieFactory.cs" />

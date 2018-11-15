@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CSYahtzee.model
 {
-  public class DiceCup
+  public class DiceCup : IDiceCup
   {
-    private List<Die> m_dice;
+    private List<IDie> m_dice;
 
     public int DiceCount
     {
@@ -30,8 +30,10 @@ namespace CSYahtzee.model
 
     public DiceCup(int a_diceCount)
     {
-      m_dice = new List<Die>();
+      m_dice = new List<IDie>();
       DiceCount = a_diceCount;
     }
+
+
   }
 }

@@ -8,9 +8,6 @@ namespace CSYahtzee.model.rules
 {
   public interface IDieFactory
   {
-    Die Die
-    {
-      get;
-    }
+    IDie Die { get; }
   }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 
 using CSYahtzee.model;
+using CSYahtzee.model.rules;
+
 using Xunit;
 using Moq;
 

@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSYahtzee.model.rules
+namespace CSYahtzee.model
 {
-  public class DieFactory : IDieFactory
+  public interface IDie
   {
-    public IDie Die => new Die();
+    int FaceValue
+    {
+      get;
+    }
+
+    void Roll();
   }
 }
