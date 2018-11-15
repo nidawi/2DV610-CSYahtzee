@@ -33,6 +33,10 @@ namespace CSYahtzee.model
     {
       m_dice = new List<IDie>();
       DiceCount = a_diceCount;
+
+      if (a_dieFactory == null)
+        throw new ArgumentNullException();
+
       m_dieFactory = a_dieFactory;
     }
 
