@@ -33,11 +33,7 @@ namespace CSYahtzee.model
     {
       m_dice = new List<IDie>();
       DiceCount = a_diceCount;
-
-      if (a_dieFactory == null)
-        throw new ArgumentNullException();
-
-      m_dieFactory = a_dieFactory;
+      m_dieFactory = a_dieFactory ?? throw new ArgumentNullException();
     }
 
     public DiceCup(int a_diceCount) : this(a_diceCount, new rules.DieFactory())
