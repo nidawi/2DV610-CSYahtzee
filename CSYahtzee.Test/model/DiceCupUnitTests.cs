@@ -63,6 +63,13 @@ namespace CSYahtzee.Tests.model
       });
     }
 
+    [Fact]
+    public void ShouldReturnAListOfFaceValues()
+    {
+      sut = new DiceCup(m_diceCount, MockedDieFactory);
+      IReadOnlyList<int> faceValues = sut.DiceFaceValues;
+      Assert.True(faceValues != null);
+    }
 
     private IDieFactory MockedDieFactory
     {
