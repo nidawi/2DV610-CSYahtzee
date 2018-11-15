@@ -78,8 +78,8 @@ namespace CSYahtzee.Tests.model
         var mockedDieFactory = new Mock<IDieFactory>();
         var mockedDie = new Mock<IDie>();
 
-        mockedDie.Setup(die => die.FaceValue).Returns(m_diceValue);
-        mockedDieFactory.Setup(factory => factory.Die).Returns(mockedDie.Object);
+        mockedDie.SetupGet(die => die.FaceValue).Returns(m_diceValue);
+        mockedDieFactory.SetupGet(factory => factory.Die).Returns(mockedDie.Object);
 
         return mockedDieFactory.Object;
       }

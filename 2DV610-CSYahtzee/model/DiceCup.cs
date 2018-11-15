@@ -20,20 +20,28 @@ namespace CSYahtzee.model
           throw new InvalidDiceCountException();
 
         for (int i = 0; i < value; i++)
-          m_dice.Add(new Die());
+          m_dice.Add(m_dieFactory.Die);
       }
     }
 
     public IReadOnlyList<int> DiceFaceValues
     {
-      get => throw new NotImplementedException();
+      get
+      {
+        List<int> fvs = new List<int>();
+        foreach (IDie die in m_dice)
+        {
+          fvs.Add(die.FaceValue);
+        }
+        return fvs;
+      }
     }
 
     public DiceCup(int a_diceCount, rules.IDieFactory a_dieFactory)
     {
       m_dice = new List<IDie>();
-      DiceCount = a_diceCount;
       m_dieFactory = a_dieFactory ?? throw new ArgumentNullException();
+      DiceCount = a_diceCount;
     }
 
     public DiceCup(int a_diceCount) : this(a_diceCount, new rules.DieFactory())
