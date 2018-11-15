@@ -29,18 +29,15 @@ namespace CSYahtzee.model
       get => throw new NotImplementedException();
     }
 
-    public DiceCup(int a_diceCount)
-    {
-      m_dice = new List<IDie>();
-      DiceCount = a_diceCount;
-    }
-
     public DiceCup(int a_diceCount, rules.IDieFactory a_dieFactory)
     {
       m_dice = new List<IDie>();
       DiceCount = a_diceCount;
       m_dieFactory = a_dieFactory;
     }
+    public DiceCup(int a_diceCount) : this(a_diceCount, new rules.DieFactory())
+    {
 
+    }
   }
 }
