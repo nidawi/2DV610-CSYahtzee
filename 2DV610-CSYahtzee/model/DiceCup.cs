@@ -34,6 +34,10 @@ namespace CSYahtzee.model
       DiceCount = a_diceCount;
     }
 
+    public DiceCup(int a_diceCount, rules.IDieFactory a_dieFactory)
+    {
+      throw new NotImplementedException();
+    }
 
   }
 }
