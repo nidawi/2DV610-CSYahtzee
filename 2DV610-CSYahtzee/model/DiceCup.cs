@@ -9,6 +9,7 @@ namespace CSYahtzee.model
   public class DiceCup : IDiceCup
   {
     private List<IDie> m_dice;
+    private rules.IDieFactory m_dieFactory;
 
     public int DiceCount
     {
@@ -36,7 +37,9 @@ namespace CSYahtzee.model
 
     public DiceCup(int a_diceCount, rules.IDieFactory a_dieFactory)
     {
-      throw new NotImplementedException();
+      m_dice = new List<IDie>();
+      DiceCount = a_diceCount;
+      m_dieFactory = a_dieFactory;
     }
 
   }
