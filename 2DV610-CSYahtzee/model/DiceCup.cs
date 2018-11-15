@@ -26,15 +26,7 @@ namespace CSYahtzee.model
 
     public IReadOnlyList<int> DiceFaceValues
     {
-      get
-      {
-        List<int> fvs = new List<int>();
-        foreach (IDie die in m_dice)
-        {
-          fvs.Add(die.FaceValue);
-        }
-        return fvs;
-      }
+      get => m_dice.Select(die => die.FaceValue).ToList();
     }
 
     public DiceCup(int a_diceCount, rules.IDieFactory a_dieFactory)
