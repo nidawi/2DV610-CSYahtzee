@@ -35,6 +35,7 @@ namespace CSYahtzee.model
       DiceCount = a_diceCount;
       m_dieFactory = a_dieFactory;
     }
+
     public DiceCup(int a_diceCount) : this(a_diceCount, new rules.DieFactory())
     {
 

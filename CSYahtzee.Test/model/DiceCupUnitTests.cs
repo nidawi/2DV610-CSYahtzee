@@ -54,6 +54,16 @@ namespace CSYahtzee.Tests.model
       Assert.True(sut != null);
     }
 
+    [Fact]
+    public void OverloadedConstructorShouldThrowWhenNotGivenADieFactory()
+    {
+      Assert.Throws<ArgumentNullException>(delegate ()
+      {
+        sut = new DiceCup(m_diceCount, null);
+      });
+    }
+
+
     private IDieFactory MockedDieFactory
     {
       get
