@@ -24,6 +24,11 @@ namespace CSYahtzee.model
       }
     }
 
+    public bool HasRolled
+    {
+      get => throw new NotImplementedException();
+    }
+
     public IReadOnlyList<int> DiceFaceValues
     {
       get => m_dice.Select(die => die.FaceValue).ToList();

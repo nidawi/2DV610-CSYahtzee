@@ -13,8 +13,9 @@ namespace CSYahtzee.Tests.model
   public class DiceCupUnitTests : IDisposable
   {
     private DiceCup sut;
-    private int m_diceCount = 5;
-    private int m_diceValue = 2;
+    private int m_diceCount;
+    private int m_diceValue;
+    private bool m_diceRolled;
 
     public DiceCupUnitTests()
     {
@@ -23,8 +24,12 @@ namespace CSYahtzee.Tests.model
 
     public void Dispose()
     {
+      m_diceCount = 5;
+      m_diceValue = 2;
+      m_diceRolled = false;
+
       sut = new DiceCup(m_diceCount);
-    }
+  }
 
     [Fact]
     public void ConstructorShouldNotThrowWithAcceptableInput()
@@ -72,6 +77,13 @@ namespace CSYahtzee.Tests.model
       Assert.True(faceValues != null);
     }
 
+    [Fact]
+    public void ShouldReportFalseWhenDiceHaveNotBeenRolled()
+    {
+      // DiceCup has not rolled its dice
+      Assert.False(sut.HasRolled);
+    }
+
     private IDieFactory MockedDieFactory
     {
       get
@@ -80,6 +92,7 @@ namespace CSYahtzee.Tests.model
         var mockedDie = new Mock<IDie>();
 
         mockedDie.SetupGet(die => die.FaceValue).Returns(m_diceValue);
+        mockedDie.SetupGet(die => die.HasRolled).Returns(m_diceRolled);
         mockedDieFactory.SetupGet(factory => factory.Die).Returns(mockedDie.Object);
 
         return mockedDieFactory.Object;

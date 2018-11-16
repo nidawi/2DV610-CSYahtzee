@@ -13,6 +13,11 @@ namespace CSYahtzee.model
       get;
     }
 
+    bool HasRolled
+    {
+      get;
+    }
+
     IReadOnlyList<int> DiceFaceValues
     {
       get;
