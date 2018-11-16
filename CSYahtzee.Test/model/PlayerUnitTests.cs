@@ -50,7 +50,7 @@ namespace CSYahtzee.Tests.model
     }
 
     [Fact]
-    public void ShouldReturnTheCorrectPlayername()
+    public void ShouldReturnCorrectPlayername()
     {
       Assert.Equal(m_playerName, sut.Name);
     }

@@ -14,7 +14,7 @@ namespace CSYahtzee.model
 
     public string Name
     {
-      get => throw new NotImplementedException();
+      get => m_name;
       protected set
       {
         if (value == null)
