@@ -32,6 +32,7 @@ namespace CSYahtzee.model
     /// </summary>
     /// <param name="a_name">Name of player.</param>
     /// <exception cref="ArgumentNullException"></exception>
+    /// <exception cref="PlayerNameTooShortException"></exception>
     public Player(string a_name)
     {
       Name = a_name;
