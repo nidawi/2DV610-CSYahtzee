@@ -52,10 +52,7 @@ namespace CSYahtzee.model
 
     public void RollDice()
     {
-      foreach (IDie die in m_dice)
-      {
-        die.Roll();
-      }
+      m_dice.ForEach(die => die.Roll());
     }
   }
 }
