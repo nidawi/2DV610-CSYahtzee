@@ -43,10 +43,9 @@ namespace CSYahtzee.Tests.model
     [Fact]
     public void ConstructorShouldThrowWhenGivenTooShortString()
     {
-      string playerName = new List<string>(Player.MIN_NAME_LENGTH - 1).Select(item => "H").Aggregate((a, b) => a + b);
       Assert.Throws<PlayerNameTooShortException>(delegate ()
       {
-        sut = new Player(playerName);
+        sut = new Player(new string('h', Player.MIN_NAME_LENGTH - 1));
       });
     }
   }

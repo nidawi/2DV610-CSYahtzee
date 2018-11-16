@@ -21,7 +21,7 @@ namespace CSYahtzee.model
           throw new ArgumentNullException();
 
         if (value.Length < MIN_NAME_LENGTH)
-          throw new NotImplementedException();
+          throw new PlayerNameTooShortException();
 
         m_name = value;
       }
