@@ -52,7 +52,10 @@ namespace CSYahtzee.model
 
     public void RollDice()
     {
-      throw new NotImplementedException();
+      foreach (IDie die in m_dice)
+      {
+        die.Roll();
+      }
     }
   }
 }
