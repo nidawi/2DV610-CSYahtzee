@@ -84,6 +84,16 @@ namespace CSYahtzee.Tests.model
       Assert.False(sut.HasRolled);
     }
 
+    [Fact]
+    public void ShouldReturnTrueWhenDiceHaveBeenRolled()
+    {
+      // Command + Query Combination Test due to Command RollDice wouldn't make a meaningful test on its own
+      m_diceRolled = true;
+      sut = new DiceCup(m_diceCount, MockedDieFactory);
+      sut.RollDice();
+      Assert.True(sut.HasRolled);
+    }
+
     private IDieFactory MockedDieFactory
     {
       get

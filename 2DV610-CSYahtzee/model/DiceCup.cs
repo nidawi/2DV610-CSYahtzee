@@ -50,5 +50,9 @@ namespace CSYahtzee.model
 
     }
 
+    public void RollDice()
+    {
+      throw new NotImplementedException();
+    }
   }
 }

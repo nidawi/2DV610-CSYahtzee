@@ -18,6 +18,8 @@ namespace CSYahtzee.model
       get;
     }
 
+    void RollDice();
+
     IReadOnlyList<int> DiceFaceValues
     {
       get;
