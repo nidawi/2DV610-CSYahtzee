@@ -18,7 +18,7 @@ namespace CSYahtzee.model
       protected set
       {
         if (value == null)
-          throw new NotImplementedException();
+          throw new ArgumentNullException();
 
         if (value.Length < MIN_NAME_LENGTH)
           throw new NotImplementedException();
