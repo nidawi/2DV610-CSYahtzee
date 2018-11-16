@@ -47,7 +47,9 @@
     <Compile Include="model\Die.cs" />
     <Compile Include="model\IDiceCup.cs" />
     <Compile Include="model\IDie.cs" />
+    <Compile Include="model\IPlayer.cs" />
     <Compile Include="model\ModelExceptions.cs" />
+    <Compile Include="model\Player.cs" />
     <Compile Include="model\rules\DieFactory.cs" />
     <Compile Include="model\rules\IDieFactory.cs" />
     <Compile Include="Program.cs" />
@@ -56,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="docs\Code Coverage.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controller\" />
