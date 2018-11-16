@@ -27,16 +27,10 @@ namespace CSYahtzee.model
       }
     }
 
-    public bool HasRolled
-    {
-      get
-      {
-        if (m_faceValue == 0)
-          return false;
-
-        return true;
-      }
-    }
+    /// <summary>
+    /// Returns true/false depending on whether the die has been rolled.
+    /// </summary>
+    public bool HasRolled => m_faceValue > 0;
 
     /// <summary>
     /// Default construtor.
