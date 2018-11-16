@@ -8,4 +8,5 @@ namespace CSYahtzee.model
 {
   public class DieNotRolledException : Exception { }
   public class InvalidDiceCountException : Exception { }
+  
 }

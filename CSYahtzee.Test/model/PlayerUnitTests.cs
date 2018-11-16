@@ -29,5 +29,14 @@ namespace CSYahtzee.Tests.model
     {
       Assert.True(sut != null);
     }
+
+    [Fact]
+    public void ConstructorShouldThrowWhenGivenNull()
+    {
+      Assert.Throws<ArgumentNullException>(delegate ()
+      {
+        sut = new Player(null);
+      });
+    }
   }
 }
