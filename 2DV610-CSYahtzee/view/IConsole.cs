@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSYahtzee.view
 {
-  interface IConsole
+  public interface IConsole
   {
 
   }
