@@ -13,7 +13,7 @@ namespace CSYahtzee.Tests.model
   public class PlayerUnitTests : IDisposable
   {
     private Player sut;
-    private string m_playerName = "DefaultName"; // default string is needed else constructor will throw.
+    private string m_playername = "DefaultName"; // default string is needed else constructor will throw.
 
     public PlayerUnitTests()
     {
@@ -22,7 +22,7 @@ namespace CSYahtzee.Tests.model
 
     public void Dispose()
     {
-      sut = new Player(m_playerName);
+      sut = new Player(m_playername);
     }
 
     [Fact]
@@ -43,7 +43,7 @@ namespace CSYahtzee.Tests.model
     [Fact]
     public void ConstructorShouldThrowWhenGivenTooShortString()
     {
-      Assert.Throws<PlayerNameTooShortException>(delegate ()
+      Assert.Throws<PlayernameTooShortException>(delegate ()
       {
         sut = new Player(new string('h', Player.MIN_NAME_LENGTH - 1));
       });
@@ -52,7 +52,7 @@ namespace CSYahtzee.Tests.model
     [Fact]
     public void ShouldReturnCorrectPlayername()
     {
-      Assert.Equal(m_playerName, sut.Name);
+      Assert.Equal(m_playername, sut.Name);
     }
   }
 }

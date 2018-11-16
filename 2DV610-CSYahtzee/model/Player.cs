@@ -21,7 +21,7 @@ namespace CSYahtzee.model
           throw new ArgumentNullException();
 
         if (value.Length < MIN_NAME_LENGTH)
-          throw new PlayerNameTooShortException();
+          throw new PlayernameTooShortException();
 
         m_name = value;
       }
@@ -32,7 +32,7 @@ namespace CSYahtzee.model
     /// </summary>
     /// <param name="a_name">Name of player.</param>
     /// <exception cref="ArgumentNullException"></exception>
-    /// <exception cref="PlayerNameTooShortException"></exception>
+    /// <exception cref="PlayernameTooShortException"></exception>
     public Player(string a_name)
     {
       Name = a_name;
