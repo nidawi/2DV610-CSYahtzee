@@ -13,6 +13,11 @@ namespace CSYahtzee.model
       get;
     }
 
+    bool HasRolled
+    {
+      get;
+    }
+
     void Roll();
   }
 }

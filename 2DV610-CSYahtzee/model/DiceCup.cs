@@ -40,5 +40,6 @@ namespace CSYahtzee.model
     {
 
     }
+
   }
 }

@@ -44,6 +44,15 @@ namespace CSYahtzee.Tests.model
       AssertDieHasAcceptableValue();
     }
 
+    [Fact]
+    public void DieRollStateShouldBeFalseBeforeBeingRolled()
+    {
+      // Die has not been rolled.
+      Assert.False(sut.HasRolled);
+    }
+
+    // helper methods
+
     private void AssertDieHasAcceptableValue()
     {
       Assert.True(sut.FaceValue >= 1 || sut.FaceValue <= 6);

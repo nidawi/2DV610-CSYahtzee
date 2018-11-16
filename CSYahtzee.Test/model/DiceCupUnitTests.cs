@@ -66,6 +66,7 @@ namespace CSYahtzee.Tests.model
     [Fact]
     public void ShouldReturnAListOfFaceValues()
     {
+      // No point in writing more tests for face values since it's all mocked anyway
       sut = new DiceCup(m_diceCount, MockedDieFactory);
       IReadOnlyList<int> faceValues = sut.DiceFaceValues;
       Assert.True(faceValues != null);

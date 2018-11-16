@@ -27,6 +27,14 @@ namespace CSYahtzee.model
       }
     }
 
+    public bool HasRolled
+    {
+      get
+      {
+        throw new NotImplementedException();
+      }
+    }
+
     /// <summary>
     /// Default construtor.
     /// </summary>
