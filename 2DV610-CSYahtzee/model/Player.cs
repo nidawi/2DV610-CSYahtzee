@@ -8,9 +8,11 @@ namespace CSYahtzee.model
 {
   public class Player
   {
+    private string m_name;
+
     public Player(string a_name)
     {
-      throw new NotImplementedException();
+      m_name = a_name;
     }
   }
 }
