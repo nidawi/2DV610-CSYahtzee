@@ -11,6 +11,10 @@ namespace CSYahtzee.model
     private List<IDie> m_dice;
     private rules.IDieFactory m_dieFactory;
 
+    /// <summary>
+    /// Returns the amount of dice contained in this dice cup.
+    /// </summary>
+    /// <exception cref="InvalidDiceCountException"></exception>
     public int DiceCount
     {
       get => m_dice.Count;
@@ -24,10 +28,10 @@ namespace CSYahtzee.model
       }
     }
 
-    public bool HasRolled
-    {
-      get => m_dice.All(die => die.HasRolled);
-    }
+    /// <summary>
+    /// Returns true/false depending on whether all dice in this dice cup have been rolled.
+    /// </summary>
+    public bool HasRolled => m_dice.All(die => die.HasRolled);
 
     public IReadOnlyList<int> DiceFaceValues
     {
