@@ -26,7 +26,7 @@ namespace CSYahtzee.model
 
     public bool HasRolled
     {
-      get => throw new NotImplementedException();
+      get => m_dice.All(die => die.HasRolled);
     }
 
     public IReadOnlyList<int> DiceFaceValues
