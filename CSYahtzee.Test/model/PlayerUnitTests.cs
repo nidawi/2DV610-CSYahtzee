@@ -48,5 +48,11 @@ namespace CSYahtzee.Tests.model
         sut = new Player(new string('h', Player.MIN_NAME_LENGTH - 1));
       });
     }
+
+    [Fact]
+    public void ShouldReturnTheCorrectPlayername()
+    {
+      Assert.Equal(m_playerName, sut.Name);
+    }
   }
 }
