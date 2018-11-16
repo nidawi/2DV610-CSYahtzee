@@ -51,6 +51,14 @@ namespace CSYahtzee.Tests.model
       Assert.False(sut.HasRolled);
     }
 
+    [Fact]
+    public void DieRollStateShouldBeTrueAfterBeingRolled()
+    {
+      // Die has been rolled.
+      sut.Roll();
+      Assert.True(sut.HasRolled);
+    }
+
     // helper methods
 
     private void AssertDieHasAcceptableValue()
