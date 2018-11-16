@@ -31,7 +31,9 @@ namespace CSYahtzee.model
     {
       get
       {
-        if (m_faceValue == 0) return false;
+        if (m_faceValue == 0)
+          return false;
+
         throw new NotImplementedException();
       }
     }
