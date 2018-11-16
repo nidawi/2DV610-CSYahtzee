@@ -27,6 +27,11 @@ namespace CSYahtzee.model
       }
     }
 
+    /// <summary>
+    /// Default creator constructor.
+    /// </summary>
+    /// <param name="a_name">Name of player.</param>
+    /// <exception cref="ArgumentNullException"></exception>
     public Player(string a_name)
     {
       Name = a_name;
