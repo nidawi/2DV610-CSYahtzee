@@ -14,6 +14,8 @@ namespace CSYahtzee.Tests.view
   {
     private EnglishConsole sut;
 
+    // Since System.Console is static class we cannot mock it.
+    // However, we can redirect console IO and analyze the results.
     private StringWriter m_testWriter;
     private StringReader m_testReader;
 
@@ -41,21 +43,24 @@ namespace CSYahtzee.Tests.view
     [Fact]
     public void ShouldReadInputString()
     {
-      string stringInput = "Niklas af Eriksson";
-      m_testReader = new StringReader(stringInput);
-
-      Console.SetIn(m_testReader);
-
-      string actual = sut.GetInputString();
-      string expected = stringInput;
-
-      Assert.Equal(expected, actual);
+      string expected = "Niklas af Eriksson";
+      AssertInput(expected);
     }
 
     private void AssertOutput(string a_actual)
     {
       string expected = m_testWriter.ToString();
       Assert.Equal(expected.Trim(), a_actual.Trim());
+    }
+
+    private void AssertInput(string a_expected)
+    {
+      m_testReader = new StringReader(a_expected);
+      Console.SetIn(m_testReader);
+
+      string actual = sut.GetInputString();
+
+      Assert.Equal(a_expected, actual);
     }
   }
 }
