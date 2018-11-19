@@ -15,7 +15,10 @@ namespace CSYahtzee.controller
         throw new ArgumentNullException();
       }
 
-      throw new NotImplementedException();
+      if (a_ruleFactory == null)
+      {
+        throw new ArgumentNullException();
+      }
     }
   }
 }
