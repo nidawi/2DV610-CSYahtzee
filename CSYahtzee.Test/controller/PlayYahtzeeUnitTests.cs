@@ -22,6 +22,15 @@ namespace CSYahtzee.Tests.model
       });
     }
 
+    [Fact]
+    public void ConstructorShouldThrowWhenGivenNullGameRulesFactory()
+    {
+      Assert.Throws<ArgumentNullException>(delegate ()
+      {
+        sut = new PlayYahtzee(MockedPlayerFactory, null);
+      });
+    }
+
     private CSYahtzee.model.rules.IYahtzeeGameRulesAbstractFactory MockedGameRulesFactory
     {
       get
@@ -30,6 +39,17 @@ namespace CSYahtzee.Tests.model
         // no functionality yet
 
         return mockedGameRulesFactory.Object;
+      }
+    }
+
+    private CSYahtzee.model.rules.IPlayerFactory MockedPlayerFactory
+    {
+      get
+      {
+        var mockedPlayerFactory = new Mock<CSYahtzee.model.rules.IPlayerFactory>();
+        // no functionality yet
+
+        return mockedPlayerFactory.Object;
       }
     }
   }
