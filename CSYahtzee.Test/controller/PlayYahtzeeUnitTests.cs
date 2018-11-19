@@ -9,7 +9,7 @@ using Moq;
 
 namespace CSYahtzee.Tests.model
 {
-  public class YahtzeeUnitTests
+  public class PlayYahtzeeUnitTests
   {
     private PlayYahtzee sut;
 
