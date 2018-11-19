@@ -17,7 +17,7 @@ namespace CSYahtzee.controller
 
     public bool PlayGame()
     {
-      throw new NotImplementedException();
+      return false;
     }
   }
 }
