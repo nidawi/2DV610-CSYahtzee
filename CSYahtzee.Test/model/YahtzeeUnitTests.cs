@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using System.Text;
 
 using CSYahtzee.model;
-using CSYahtzee.controller;
 using Xunit;
 using Moq;
 
 namespace CSYahtzee.Tests.model
 {
-  public class PlayYahtzeeUnitTests
+  public class YahtzeeUnitTests
   {
-    private PlayYahtzee sut;
+    private Yahtzee sut;
 
     [Fact]
     public void ConstructorShouldThrowWhenGivenNullPlayerFactory()
     {
       Assert.Throws<ArgumentNullException>(delegate ()
       {
-        sut = new PlayYahtzee(null, MockedGameRulesFactory);
+        sut = new Yahtzee(null, MockedGameRulesFactory);
       });
     }
 
@@ -27,7 +26,7 @@ namespace CSYahtzee.Tests.model
     {
       Assert.Throws<ArgumentNullException>(delegate ()
       {
-        sut = new PlayYahtzee(MockedPlayerFactory, null);
+        sut = new Yahtzee(MockedPlayerFactory, null);
       });
     }
 

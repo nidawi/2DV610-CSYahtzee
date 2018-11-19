@@ -11,6 +11,12 @@ namespace CSYahtzee.model
   /// </summary>
   public class Yahtzee : IYahtzee
   {
-
+    public Yahtzee(rules.IPlayerFactory a_playerFactory, rules.IYahtzeeGameRulesAbstractFactory a_ruleFactory)
+    {
+      if (a_playerFactory == null || a_ruleFactory == null)
+      {
+        throw new ArgumentNullException();
+      }
+    }
   }
 }
