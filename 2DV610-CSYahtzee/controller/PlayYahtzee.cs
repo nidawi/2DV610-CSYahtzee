@@ -15,5 +15,9 @@ namespace CSYahtzee.controller
         throw new ArgumentNullException();
     }
 
+    public bool PlayGame()
+    {
+      throw new NotImplementedException();
+    }
   }
 }

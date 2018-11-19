@@ -30,6 +30,16 @@ namespace CSYahtzee.Tests.controller
       });
     }
 
+    [Fact]
+    public void ShouldReturnFalseWhenGameLoopEnds()
+    {
+      sut = new PlayYahtzee(MockedConsole, MockedYahtzee);
+      bool actual = sut.PlayGame();
+      bool expected = false;
+
+      Assert.Equal(expected, actual);
+    }
+
     private CSYahtzee.view.IConsole MockedConsole
     {
       get
