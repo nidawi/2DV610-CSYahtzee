@@ -21,6 +21,15 @@ namespace CSYahtzee.Tests.controller
       });
     }
 
+    [Fact]
+    public void ConstructorShouldThrowWhenGivenNullConsole()
+    {
+      Assert.Throws<ArgumentNullException>(delegate ()
+      {
+        sut = new PlayYahtzee(null, MockedYahtzee);
+      });
+    }
+
     private CSYahtzee.view.IConsole MockedConsole
     {
       get
@@ -29,6 +38,17 @@ namespace CSYahtzee.Tests.controller
         // no functionality yet
 
         return mockedConsole.Object;
+      }
+    }
+
+    private CSYahtzee.model.IYahtzee MockedYahtzee
+    {
+      get
+      {
+        var mockedYahtzee = new Mock<CSYahtzee.model.IYahtzee>();
+        // no functionality yet
+
+        return mockedYahtzee.Object;
       }
     }
   }
