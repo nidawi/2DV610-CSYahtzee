@@ -41,6 +41,13 @@ namespace CSYahtzee.Tests.view
     }
 
     [Fact]
+    public void ShouldDisplayWelcomeMessage()
+    {
+      sut.DisplayWelcomeMessage();
+      AssertOutput("Welcome to GROOVEH YAHTZEE! Input coin to continue.");
+    }
+
+    [Fact]
     public void ShouldReadInputString()
     {
       string expected = "Niklas af Eriksson";

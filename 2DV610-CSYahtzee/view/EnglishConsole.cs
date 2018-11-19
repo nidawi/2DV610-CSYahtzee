@@ -13,6 +13,11 @@ namespace CSYahtzee.view
       Console.Write("Please provide a player name: ");
     }
 
+    public void DisplayWelcomeMessage()
+    {
+      throw new NotImplementedException();
+    }
+
     public string GetInputString()
     {
       string input = Console.ReadLine();
