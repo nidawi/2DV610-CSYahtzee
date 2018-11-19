@@ -19,7 +19,7 @@ namespace CSYahtzee.Tests.controller
 
     public void Dispose()
     {
-      sut = new PlayYahtzee(MockedConsole, MockedYahtzee);
+      sut = new PlayYahtzee(MockedConsole.Object, MockedYahtzee.Object);
     }
 
     [Fact]
@@ -27,7 +27,7 @@ namespace CSYahtzee.Tests.controller
     {
       Assert.Throws<ArgumentNullException>(delegate ()
       {
-        sut = new PlayYahtzee(MockedConsole, null);
+        sut = new PlayYahtzee(MockedConsole.Object, null);
       });
     }
 
@@ -36,7 +36,7 @@ namespace CSYahtzee.Tests.controller
     {
       Assert.Throws<ArgumentNullException>(delegate ()
       {
-        sut = new PlayYahtzee(null, MockedYahtzee);
+        sut = new PlayYahtzee(null, MockedYahtzee.Object);
       });
     }
 
@@ -48,26 +48,41 @@ namespace CSYahtzee.Tests.controller
       Assert.False(actual);
     }
 
-    private CSYahtzee.view.IConsole MockedConsole
+    [Fact]
+    public void ShouldPrintWelcomeMessage()
+    {
+      var console = MockedConsole;
+      sut = new PlayYahtzee(console.Object, MockedYahtzee.Object);
+      sut.PlayGame();
+
+      console.Verify(c => c.DisplayWelcomeMessage());
+    }
+
+
+
+
+    #region Helpers
+    private Mock<CSYahtzee.view.IConsole> MockedConsole
     {
       get
       {
         var mockedConsole = new Mock<CSYahtzee.view.IConsole>();
-        // no functionality yet
+        mockedConsole.Setup(c => c.DisplayWelcomeMessage()).Verifiable();
 
-        return mockedConsole.Object;
+        return mockedConsole;
       }
     }
 
-    private CSYahtzee.model.IYahtzee MockedYahtzee
+    private Mock<CSYahtzee.model.IYahtzee> MockedYahtzee
     {
       get
       {
         var mockedYahtzee = new Mock<CSYahtzee.model.IYahtzee>();
         // no functionality yet
 
-        return mockedYahtzee.Object;
+        return mockedYahtzee;
       }
     }
+    #endregion
   }
 }

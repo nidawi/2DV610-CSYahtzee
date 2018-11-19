@@ -17,6 +17,15 @@ namespace CSYahtzee.controller
 
     public bool PlayGame()
     {
+      // New Game Here
+
+      // Welcome Message 
+      // Instructions
+
+      // Add Players
+      // Loop Through Players
+
+      // Begin Game Loop
       return false;
     }
   }
