@@ -34,12 +34,13 @@ namespace CSYahtzee.Tests.view
     public void ShouldDisplayPlayernamePrompt()
     {
       sut.DisplayPlayernamePrompt();
-      string expected = "Please provide a player name: ".Trim();
-      string actual = m_testWriter.ToString().Trim();
-
-      Assert.Equal(expected, actual);
+      AssertOutput("Please provide a player name: ");
     }
 
-
+    private void AssertOutput(string a_actual)
+    {
+      string expected = m_testWriter.ToString();
+      Assert.Equal(expected.Trim(), a_actual.Trim());
+    }
   }
 }

@@ -10,7 +10,7 @@ namespace CSYahtzee.view
   {
     public void DisplayPlayernamePrompt()
     {
-      Console.WriteLine("Please provide a player name: ");
+      Console.Write("Please provide a player name: ");
     }
   }
 }
