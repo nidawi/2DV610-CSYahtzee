@@ -11,6 +11,11 @@ namespace CSYahtzee.controller
 
     public PlayYahtzee(view.IConsole console, model.IYahtzee yahtzee)
     {
+      if (yahtzee == null)
+      {
+        throw new ArgumentNullException();
+      }
+
       throw new NotImplementedException();
     }
 
