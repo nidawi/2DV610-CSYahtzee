@@ -15,6 +15,7 @@ namespace CSYahtzee.Tests.view
     private EnglishConsole sut;
 
     private StringWriter m_testWriter;
+    private StringReader m_testReader;
 
     public EnglishConsoleUnitTests()
     {
@@ -35,6 +36,20 @@ namespace CSYahtzee.Tests.view
     {
       sut.DisplayPlayernamePrompt();
       AssertOutput("Please provide a player name: ");
+    }
+
+    [Fact]
+    public void ShouldReadInputString()
+    {
+      string stringInput = "Niklas af Eriksson";
+      m_testReader = new StringReader(stringInput);
+
+      Console.SetIn(m_testReader);
+
+      string actual = sut.GetInputString();
+      string expected = stringInput;
+
+      Assert.Equal(expected, actual);
     }
 
     private void AssertOutput(string a_actual)
