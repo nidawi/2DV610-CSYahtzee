@@ -16,6 +16,11 @@ namespace CSYahtzee.controller
         throw new ArgumentNullException();
       }
 
+      if (a_console == null)
+      {
+        throw new ArgumentNullException();
+      }
+
       throw new NotImplementedException();
     }
 
