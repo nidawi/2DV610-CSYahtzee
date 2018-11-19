@@ -15,7 +15,8 @@ namespace CSYahtzee.view
 
     public string GetInputString()
     {
-      throw new NotImplementedException();
+      string input = Console.ReadLine();
+      return input;
     }
   }
 }
