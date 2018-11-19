@@ -9,14 +9,14 @@ namespace CSYahtzee.controller
   public class PlayYahtzee
   {
 
-    view.IConsole console;
+    private view.IConsole m_console;
 
     public PlayYahtzee(view.IConsole a_console, model.IYahtzee a_yahtzee)
     {
       if (a_yahtzee == null || a_console == null)
         throw new ArgumentNullException();
 
-      console = a_console;
+      m_console = a_console;
     }
 
     public bool PlayGame()
@@ -26,7 +26,7 @@ namespace CSYahtzee.controller
       // Welcome Message 
       // Instructions
 
-      console.DisplayWelcomeMessage();
+      m_console.DisplayWelcomeMessage();
 
       // Add Players
       // Loop Through Players

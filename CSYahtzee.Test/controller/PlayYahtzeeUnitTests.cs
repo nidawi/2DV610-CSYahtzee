@@ -8,19 +8,9 @@ using Moq;
 
 namespace CSYahtzee.Tests.controller
 {
-  public class PlayYahtzeeUnitTests : IDisposable
+  public class PlayYahtzeeUnitTests
   {
     private PlayYahtzee sut;
-
-    public PlayYahtzeeUnitTests()
-    {
-      Dispose();
-    }
-
-    public void Dispose()
-    {
-      sut = new PlayYahtzee(MockedConsole.Object, MockedYahtzee.Object);
-    }
 
     [Fact]
     public void ConstructorShouldThrowWhenGivenNullYahtzee()
@@ -43,6 +33,8 @@ namespace CSYahtzee.Tests.controller
     [Fact]
     public void ShouldReturnFalseWhenGameLoopEnds()
     {
+      sut = new PlayYahtzee(MockedConsole.Object, MockedYahtzee.Object);
+
       bool actual = sut.PlayGame();
 
       Assert.False(actual);
@@ -53,6 +45,7 @@ namespace CSYahtzee.Tests.controller
     {
       var console = MockedConsole;
       sut = new PlayYahtzee(console.Object, MockedYahtzee.Object);
+
       sut.PlayGame();
 
       console.Verify(c => c.DisplayWelcomeMessage());
