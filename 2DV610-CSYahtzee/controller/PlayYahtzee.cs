@@ -9,9 +9,9 @@ namespace CSYahtzee.controller
   public class PlayYahtzee
   {
 
-    public PlayYahtzee(view.IConsole console, model.IYahtzee yahtzee)
+    public PlayYahtzee(view.IConsole a_console, model.IYahtzee a_yahtzee)
     {
-      if (yahtzee == null)
+      if (a_yahtzee == null)
       {
         throw new ArgumentNullException();
       }
