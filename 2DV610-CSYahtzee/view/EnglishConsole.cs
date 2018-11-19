@@ -8,6 +8,8 @@ namespace CSYahtzee.view
 {
   public class EnglishConsole : IConsole
   {
+    // Output functions 
+
     public void DisplayPlayernamePrompt()
     {
       Console.Write("Please provide a player name: ");
@@ -17,6 +19,8 @@ namespace CSYahtzee.view
     {
       Console.WriteLine("Welcome to GROOVEH YAHTZEE! Input coin to continue.");
     }
+
+    // Input functions
 
     public string GetInputString()
     {
