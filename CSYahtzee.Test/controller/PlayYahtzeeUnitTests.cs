@@ -8,9 +8,19 @@ using Moq;
 
 namespace CSYahtzee.Tests.controller
 {
-  public class PlayYahtzeeUnitTests
+  public class PlayYahtzeeUnitTests : IDisposable
   {
     private PlayYahtzee sut;
+
+    public PlayYahtzeeUnitTests()
+    {
+      Dispose();
+    }
+
+    public void Dispose()
+    {
+      sut = new PlayYahtzee(MockedConsole, MockedYahtzee);
+    }
 
     [Fact]
     public void ConstructorShouldThrowWhenGivenNullYahtzee()
@@ -33,11 +43,9 @@ namespace CSYahtzee.Tests.controller
     [Fact]
     public void ShouldReturnFalseWhenGameLoopEnds()
     {
-      sut = new PlayYahtzee(MockedConsole, MockedYahtzee);
       bool actual = sut.PlayGame();
-      bool expected = false;
 
-      Assert.Equal(expected, actual);
+      Assert.False(actual);
     }
 
     private CSYahtzee.view.IConsole MockedConsole
