@@ -59,6 +59,7 @@
     <Compile Include="model\Yahtzee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\EnglishConsole.cs" />
     <Compile Include="view\IConsole.cs" />
   </ItemGroup>
   <ItemGroup>
