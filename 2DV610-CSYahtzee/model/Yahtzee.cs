@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSYahtzee
+namespace CSYahtzee.model
 {
-  public class Program
+  /// <summary>
+  /// Yahtzee Game Facade
+  /// </summary>
+  public class Yahtzee : IYahtzee
   {
-    static void Main(string[] args)
-    {
-      
-    }
+
   }
 }

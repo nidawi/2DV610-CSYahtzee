@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSYahtzee
+namespace CSYahtzee.model.rules
 {
-  public class Program
+  public interface IPlayerFactory
   {
-    static void Main(string[] args)
-    {
-      
-    }
+
   }
 }

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="model\DiceCupUnitTests.cs~RFa9c6fa7.TMP" />
+    <None Remove="model\YahtzeeUnitTests.cs~RF14f1167a.TMP" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,7 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="controller\" />
     <Folder Include="view\" />
   </ItemGroup>
 
