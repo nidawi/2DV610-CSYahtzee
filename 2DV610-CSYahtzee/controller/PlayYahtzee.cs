@@ -10,6 +10,11 @@ namespace CSYahtzee.controller
   {
     public PlayYahtzee(model.rules.IPlayerFactory a_playerFactory, model.rules.IYahtzeeGameRulesAbstractFactory a_ruleFactory)
     {
+      if (a_playerFactory == null)
+      {
+        throw new ArgumentNullException();
+      }
+
       throw new NotImplementedException();
     }
   }
