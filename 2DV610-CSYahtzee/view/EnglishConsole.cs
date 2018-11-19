@@ -15,7 +15,7 @@ namespace CSYahtzee.view
 
     public void DisplayWelcomeMessage()
     {
-      throw new NotImplementedException();
+      Console.WriteLine("Welcome to GROOVEH YAHTZEE! Input coin to continue.");
     }
 
     public string GetInputString()
