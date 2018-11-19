@@ -9,5 +9,10 @@ namespace CSYahtzee.controller
   public class PlayYahtzee
   {
 
+    public PlayYahtzee(view.IConsole console, model.IYahtzee yahtzee)
+    {
+      throw new NotImplementedException();
+    }
+
   }
 }
