@@ -24,5 +24,10 @@ namespace CSYahtzee.model
         throw new ArgumentNullException();
       }
     }
+
+    public void AddPlayer(string name)
+    {
+      throw new NotImplementedException();
+    }
   }
 }

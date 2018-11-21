@@ -37,6 +37,18 @@ namespace CSYahtzee.Tests.model
       Assert.Equal(0, sut.PlayerCount);
     }
 
+    [Fact]
+    public void ShouldAddAPlayer()
+    {
+      // This verifies that a player, any player, has been added.
+      sut = new Yahtzee(MockedPlayerFactory, MockedGameRulesFactory);
+
+      sut.AddPlayer("Niklas af Eriksson");
+      sut.AddPlayer("Jonathan von Alklid");
+
+      Assert.Equal(2, sut.PlayerCount);
+    }
+
     private CSYahtzee.model.rules.IYahtzeeGameRulesAbstractFactory MockedGameRulesFactory
     {
       get
@@ -52,7 +64,11 @@ namespace CSYahtzee.Tests.model
     {
       get
       {
+        var mockedPlayer = new Mock<CSYahtzee.model.IPlayer>();
+
         var mockedPlayerFactory = new Mock<CSYahtzee.model.rules.IPlayerFactory>();
+        mockedPlayerFactory.Setup(pf => pf.Player).Returns(mockedPlayer.Object);
+        
         // no functionality yet
 
         return mockedPlayerFactory.Object;
