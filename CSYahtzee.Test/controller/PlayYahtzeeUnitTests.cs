@@ -51,6 +51,16 @@ namespace CSYahtzee.Tests.controller
       console.Verify(c => c.DisplayWelcomeMessage());
     }
 
+    [Fact]
+    public void ShouldDisplayPlayerCountPrompt()
+    {
+      var console = MockedConsole;
+      sut = new PlayYahtzee(console.Object, MockedYahtzee.Object);
+
+      sut.PlayGame();
+
+      console.Verify(c => c.DisplayPlayerCountPrompt());
+    }
 
 
 
@@ -61,6 +71,7 @@ namespace CSYahtzee.Tests.controller
       {
         var mockedConsole = new Mock<CSYahtzee.view.IConsole>();
         mockedConsole.Setup(c => c.DisplayWelcomeMessage()).Verifiable();
+        mockedConsole.Setup(c => c.DisplayPlayerCountPrompt()).Verifiable();
 
         return mockedConsole;
       }
