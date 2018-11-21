@@ -11,12 +11,14 @@ namespace CSYahtzee.model
   /// </summary>
   public class Yahtzee : IYahtzee
   {
-    private List<IPlayer> m_players = new List<IPlayer>();
+    private List<IPlayer> m_players;
 
     public int PlayerCount => m_players.Count;
 
     public Yahtzee(rules.IPlayerFactory a_playerFactory, rules.IYahtzeeGameRulesAbstractFactory a_ruleFactory)
     {
+      m_players = new List<IPlayer>();
+
       if (a_playerFactory == null || a_ruleFactory == null)
       {
         throw new ArgumentNullException();
