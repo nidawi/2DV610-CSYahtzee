@@ -30,8 +30,14 @@ namespace CSYahtzee.controller
 
       m_console.DisplayPlayerCountPrompt();
 
-  
-      
+      int playerCount = m_console.GetInputInteger(); // handle errors?
+      for (int i = 0; i < playerCount; i++)
+      {
+        // we don't need to call addPlayer yet
+        m_console.DisplayPlayernamePrompt();
+
+      }
+
       // Add Players
       // Loop Through Players
 
