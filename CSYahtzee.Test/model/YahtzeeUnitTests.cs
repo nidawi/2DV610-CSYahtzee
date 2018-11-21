@@ -30,6 +30,13 @@ namespace CSYahtzee.Tests.model
       });
     }
 
+    [Fact]
+    public void ShouldReturnDefaultPlayerCount()
+    {
+      sut = new Yahtzee(MockedPlayerFactory, MockedGameRulesFactory);
+      Assert.Equal(0, sut.PlayerCount);
+    }
+
     private CSYahtzee.model.rules.IYahtzeeGameRulesAbstractFactory MockedGameRulesFactory
     {
       get
