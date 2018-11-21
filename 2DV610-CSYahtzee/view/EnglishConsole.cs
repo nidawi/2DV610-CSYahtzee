@@ -8,7 +8,7 @@ namespace CSYahtzee.view
 {
   public class EnglishConsole : IConsole
   {
-    // Output functions 
+    // Output methods 
 
     public void DisplayPlayernamePrompt()
     {
@@ -25,7 +25,7 @@ namespace CSYahtzee.view
       Console.Write("How many will be playing? ");
     }
 
-    // Input functions
+    // Input methods
 
     public string GetInputString()
     {

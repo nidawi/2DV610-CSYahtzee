@@ -8,11 +8,16 @@ namespace CSYahtzee.view
 {
   public interface IConsole
   {
+
+    // Output methods
+
     void DisplayPlayernamePrompt();
 
     void DisplayWelcomeMessage();
 
     void DisplayPlayerCountPrompt();
+
+    // Input methods
 
     string GetInputString();
   }
