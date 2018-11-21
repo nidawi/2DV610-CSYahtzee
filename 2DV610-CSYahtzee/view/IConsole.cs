@@ -21,6 +21,6 @@ namespace CSYahtzee.view
 
     string GetInputString();
 
-    int GetInputString();
+    int GetInputInteger();
   }
 }
