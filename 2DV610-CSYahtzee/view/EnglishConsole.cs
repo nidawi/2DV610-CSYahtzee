@@ -22,7 +22,7 @@ namespace CSYahtzee.view
 
     public void DisplayPlayerCountPrompt()
     {
-      throw new NotImplementedException();
+      Console.Write("How many will be playing? ");
     }
 
     // Input functions
