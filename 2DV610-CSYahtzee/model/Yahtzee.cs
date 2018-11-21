@@ -11,7 +11,9 @@ namespace CSYahtzee.model
   /// </summary>
   public class Yahtzee : IYahtzee
   {
-    public int PlayerCount => throw new NotImplementedException();
+    private List<IPlayer> m_players = new List<IPlayer>();
+
+    public int PlayerCount => m_players.Count;
 
     public Yahtzee(rules.IPlayerFactory a_playerFactory, rules.IYahtzeeGameRulesAbstractFactory a_ruleFactory)
     {
