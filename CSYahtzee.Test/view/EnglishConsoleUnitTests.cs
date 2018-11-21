@@ -68,6 +68,17 @@ namespace CSYahtzee.Tests.view
       AssertInput(expected);
     }
 
+    [Fact]
+    public void ReadInputIntegerShouldThrowOnInvalidInteger()
+    {
+      m_testReader = new StringReader("not a number");
+      Console.SetIn(m_testReader);
+
+      Assert.Throws<FormatException>(delegate() {
+        sut.GetInputInteger();
+      });
+    }
+
     private void AssertOutput(string a_actual)
     {
       string expected = m_testWriter.ToString();
