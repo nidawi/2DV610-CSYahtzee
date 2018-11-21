@@ -20,6 +20,11 @@ namespace CSYahtzee.view
       Console.WriteLine("Welcome to GROOVEH YAHTZEE! Input coin to continue.");
     }
 
+    public void DisplayPlayerCountPrompt()
+    {
+      throw new NotImplementedException();
+    }
+
     // Input functions
 
     public string GetInputString()

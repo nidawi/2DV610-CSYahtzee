@@ -12,6 +12,8 @@ namespace CSYahtzee.view
 
     void DisplayWelcomeMessage();
 
+    void DisplayPlayerCountPrompt();
+
     string GetInputString();
   }
 }

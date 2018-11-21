@@ -54,6 +54,13 @@ namespace CSYahtzee.Tests.view
       AssertInput(expected);
     }
 
+    [Fact]
+    public void ShouldDisplayPlayerCountPrompt()
+    {
+      sut.DisplayPlayerCountPrompt();
+      AssertOutput("How many will be playing? ");
+    }
+
     private void AssertOutput(string a_actual)
     {
       string expected = m_testWriter.ToString();
