@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 using CSYahtzee.model;
 using Xunit;
@@ -38,7 +39,7 @@ namespace CSYahtzee.Tests.model
     }
 
     [Fact]
-    public void ShouldAddAPlayer()
+    public void ShouldAddXPlayers()
     {
       // This verifies that a player, any player, has been added.
       sut = new Yahtzee(MockedPlayerFactory, MockedGameRulesFactory);
@@ -67,7 +68,7 @@ namespace CSYahtzee.Tests.model
         var mockedPlayer = new Mock<CSYahtzee.model.IPlayer>();
 
         var mockedPlayerFactory = new Mock<CSYahtzee.model.rules.IPlayerFactory>();
-        mockedPlayerFactory.Setup(pf => pf.Player).Returns(mockedPlayer.Object);
+        mockedPlayerFactory.Setup(pf => pf.CreatePlayer(It.IsAny<string>())).Returns(mockedPlayer.Object);
         
         // no functionality yet
 

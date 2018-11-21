@@ -8,9 +8,6 @@ namespace CSYahtzee.model.rules
 {
   public interface IPlayerFactory
   {
-    IPlayer Player
-    {
-      get;
-    }
+    IPlayer CreatePlayer(string a_name);
   }
 }

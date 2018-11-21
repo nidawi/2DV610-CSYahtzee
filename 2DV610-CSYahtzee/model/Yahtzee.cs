@@ -19,18 +19,18 @@ namespace CSYahtzee.model
 
     public Yahtzee(rules.IPlayerFactory a_playerFactory, rules.IYahtzeeGameRulesAbstractFactory a_ruleFactory)
     {
-      m_playerFactory = a_playerFactory;
-      m_players = new List<IPlayer>();
-
       if (a_playerFactory == null || a_ruleFactory == null)
       {
         throw new ArgumentNullException();
       }
+
+      m_playerFactory = a_playerFactory;
+      m_players = new List<IPlayer>();
     }
 
-    public void AddPlayer(string name)
+    public void AddPlayer(string a_name)
     {
-      m_players.Add(m_playerFactory.Player);
+      m_players.Add(m_playerFactory.CreatePlayer(a_name));
     }
   }
 }
