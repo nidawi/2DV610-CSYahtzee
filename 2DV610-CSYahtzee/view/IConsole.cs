@@ -20,5 +20,7 @@ namespace CSYahtzee.view
     // Input methods
 
     string GetInputString();
+
+    int GetInputString();
   }
 }
