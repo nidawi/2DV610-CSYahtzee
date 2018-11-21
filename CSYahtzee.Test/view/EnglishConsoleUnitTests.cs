@@ -71,8 +71,7 @@ namespace CSYahtzee.Tests.view
     [Fact]
     public void ReadInputIntegerShouldThrowOnInvalidInteger()
     {
-      m_testReader = new StringReader("not a number");
-      Console.SetIn(m_testReader);
+      SetInput("not a number");
 
       Assert.Throws<FormatException>(delegate() {
         sut.GetInputInteger();
@@ -87,8 +86,7 @@ namespace CSYahtzee.Tests.view
 
     private void AssertInput(string a_expected)
     {
-      m_testReader = new StringReader(a_expected);
-      Console.SetIn(m_testReader);
+      SetInput(a_expected);
 
       string actual = sut.GetInputString();
 
@@ -97,12 +95,17 @@ namespace CSYahtzee.Tests.view
 
     private void AssertInput(int a_expected)
     {
-      m_testReader = new StringReader("" + a_expected);
-      Console.SetIn(m_testReader);
+      SetInput(a_expected.ToString());
 
       int actual = sut.GetInputInteger();
 
       Assert.Equal(a_expected, actual);
+    }
+
+    private void SetInput(string a_input)
+    {
+      m_testReader = new StringReader(a_input);
+      Console.SetIn(m_testReader);
     }
   }
 }
