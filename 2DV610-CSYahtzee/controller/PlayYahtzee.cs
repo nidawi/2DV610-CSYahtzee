@@ -28,6 +28,7 @@ namespace CSYahtzee.controller
 
       m_console.DisplayWelcomeMessage();
 
+      m_console.DisplayPlayerCountPrompt();
       // Add Players
       // Loop Through Players
 
