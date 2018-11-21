@@ -35,7 +35,11 @@ namespace CSYahtzee.view
 
     public int GetInputInteger()
     {
-      throw new NotImplementedException();
+      int result;
+      if (int.TryParse(GetInputString(), out result))
+        return result;
+      else
+        throw new NotImplementedException();
     }
   }
 }
