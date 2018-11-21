@@ -63,14 +63,17 @@ namespace CSYahtzee.Tests.controller
     }
 
     [Fact]
-    public void ShouldDisplayDisplayPlayernamePromptXTimes()
+    public void ShouldPrintPlayernamePromptXTimes()
     {
+      int iterations = 3;
+
       var console = MockedConsole;
+      console.Setup(c => c.GetInputInteger()).Returns(iterations);
       sut = new PlayYahtzee(console.Object, MockedYahtzee.Object);
 
       sut.PlayGame();
 
-      console.Verify(c => c.DisplayPlayernamePrompt(), Times.Exactly(3));
+      console.Verify(c => c.DisplayPlayernamePrompt(), Times.Exactly(iterations));
     }
 
 
@@ -82,7 +85,6 @@ namespace CSYahtzee.Tests.controller
         var mockedConsole = new Mock<CSYahtzee.view.IConsole>();
         mockedConsole.Setup(c => c.DisplayWelcomeMessage()).Verifiable();
         mockedConsole.Setup(c => c.DisplayPlayerCountPrompt()).Verifiable();
-        mockedConsole.Setup(c => c.GetInputInteger()).Returns(3);
 
         return mockedConsole;
       }
