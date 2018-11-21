@@ -61,6 +61,13 @@ namespace CSYahtzee.Tests.view
       AssertOutput("How many will be playing? ");
     }
 
+    [Fact]
+    public void ShouldReadInputInteger()
+    {
+      int expected = 3;
+      AssertInput(expected);
+    }
+
     private void AssertOutput(string a_actual)
     {
       string expected = m_testWriter.ToString();
@@ -73,6 +80,16 @@ namespace CSYahtzee.Tests.view
       Console.SetIn(m_testReader);
 
       string actual = sut.GetInputString();
+
+      Assert.Equal(a_expected, actual);
+    }
+
+    private void AssertInput(int a_expected)
+    {
+      m_testReader = new StringReader("" + a_expected);
+      Console.SetIn(m_testReader);
+
+      int actual = sut.GetInputInteger();
 
       Assert.Equal(a_expected, actual);
     }

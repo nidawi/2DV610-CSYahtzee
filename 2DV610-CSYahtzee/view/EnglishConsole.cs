@@ -32,5 +32,10 @@ namespace CSYahtzee.view
       string input = Console.ReadLine();
       return input;
     }
+
+    public int GetInputInteger()
+    {
+      throw new NotImplementedException();
+    }
   }
 }
