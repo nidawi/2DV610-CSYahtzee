@@ -76,6 +76,18 @@ namespace CSYahtzee.Tests.controller
       console.Verify(c => c.DisplayPlayernamePrompt(), Times.Exactly(iterations));
     }
 
+    [Fact]
+    public void ShouldAddXPlayers()
+    {
+      int iterations = 3;
+      var yahtzee = MockedYahtzee;
+     
+      sut = new PlayYahtzee(MockedConsole.Object, yahtzee.Object);
+
+      sut.PlayGame();
+
+      yahtzee.Verify(c => c.AddPlayer(It.IsAny<string>()), Times.Exactly(iterations));
+    }
 
     #region Helpers
     private Mock<CSYahtzee.view.IConsole> MockedConsole
@@ -95,7 +107,8 @@ namespace CSYahtzee.Tests.controller
       get
       {
         var mockedYahtzee = new Mock<CSYahtzee.model.IYahtzee>();
-        // no functionality yet
+        mockedYahtzee.Setup(c => c.AddPlayer(It.IsAny<string>())).Verifiable();
+        mockedYahtzee.SetupGet(y => y.PlayerCount).Returns(3); // three is default
 
         return mockedYahtzee;
       }

@@ -8,6 +8,7 @@ namespace CSYahtzee.model
 {
   public interface IYahtzee
   {
+    int PlayerCount { get; }
     void AddPlayer(string name);
   }
 }
