@@ -10,6 +10,7 @@ namespace CSYahtzee.controller
   {
 
     private view.IConsole m_console;
+    private model.IYahtzee m_game;
 
     public PlayYahtzee(view.IConsole a_console, model.IYahtzee a_yahtzee)
     {
@@ -17,6 +18,7 @@ namespace CSYahtzee.controller
         throw new ArgumentNullException();
 
       m_console = a_console;
+      m_game = a_yahtzee;
     }
 
     public bool PlayGame()
@@ -33,9 +35,10 @@ namespace CSYahtzee.controller
       int playerCount = m_console.GetInputInteger(); // handle errors?
       for (int i = 0; i < playerCount; i++)
       {
-        // we don't need to call addPlayer yet
+
         m_console.DisplayPlayernamePrompt();
 
+        m_game.AddPlayer($"Player{(i + 1).ToString()}");
       }
 
       // Add Players

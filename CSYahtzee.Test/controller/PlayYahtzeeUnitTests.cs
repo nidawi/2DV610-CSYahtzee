@@ -97,6 +97,7 @@ namespace CSYahtzee.Tests.controller
         var mockedConsole = new Mock<CSYahtzee.view.IConsole>();
         mockedConsole.Setup(c => c.DisplayWelcomeMessage()).Verifiable();
         mockedConsole.Setup(c => c.DisplayPlayerCountPrompt()).Verifiable();
+        mockedConsole.Setup(c => c.GetInputInteger()).Returns(3);
 
         return mockedConsole;
       }
