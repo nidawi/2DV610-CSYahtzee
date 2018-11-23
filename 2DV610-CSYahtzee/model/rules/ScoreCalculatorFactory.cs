@@ -35,7 +35,8 @@ namespace CSYahtzee.model.rules
         case ScoreCategory.ThreeOfAKind:
           return new ThreeOfAKindCalculator();
       }
-
+      if (a_scoreCategory == ScoreCategory.FourOfAKind)
+        return new FourOfAKindCalculator();
       throw new NotImplementedException();
     }
   }
