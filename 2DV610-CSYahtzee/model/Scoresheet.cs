@@ -10,7 +10,7 @@ namespace CSYahtzee.model
   {
     public Scoresheet(rules.IYahtzeeGameRulesAbstractFactory a_ruleFactory)
     {
-      throw new NotImplementedException();
+      if (a_ruleFactory == null) throw new ArgumentNullException();
     }
   }
 }

@@ -14,7 +14,7 @@ namespace CSYahtzee.Tests.model
     private Scoresheet sut;
 
     [Fact]
-    public void ScoreSheetShouldThrowNullArgumentExceptionIfNotGivenAScoreFactory()
+    public void ConstructorShouldThrowNullArgumentExceptionIfNotGivenAScoreFactory()
     {
       Assert.Throws<ArgumentNullException>(delegate ()
       {
