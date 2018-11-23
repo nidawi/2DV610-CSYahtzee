@@ -49,6 +49,7 @@
     <Compile Include="model\IDiceCup.cs" />
     <Compile Include="model\IDie.cs" />
     <Compile Include="model\IPlayer.cs" />
+    <Compile Include="model\IScoresheet.cs" />
     <Compile Include="model\IYahtzee.cs" />
     <Compile Include="model\ModelExceptions.cs" />
     <Compile Include="model\Player.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="model\rules\IDieFactory.cs" />
     <Compile Include="model\rules\IPlayerFactory.cs" />
     <Compile Include="model\rules\IYahtzeeGameRulesAbstractFactory.cs" />
+    <Compile Include="model\Scoresheet.cs" />
     <Compile Include="model\Yahtzee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
