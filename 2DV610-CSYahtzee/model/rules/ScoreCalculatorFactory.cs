@@ -17,11 +17,13 @@ namespace CSYahtzee.model.rules
     /// <returns>a Score Calculator.</returns>
     public IScoreCalculator GetScoreCalculator(ScoreCategory a_scoreCategory)
     {
-      if (a_scoreCategory == ScoreCategory.Aces)
-        return new AcesCalculator();
-
-      if (a_scoreCategory == ScoreCategory.Twos)
-        return new TwosCalculator();
+      switch (a_scoreCategory)
+      {
+        case ScoreCategory.Aces:
+          return new AcesCalculator();
+        case ScoreCategory.Twos:
+          return new TwosCalculator();
+      }
 
       throw new NotImplementedException();
     }

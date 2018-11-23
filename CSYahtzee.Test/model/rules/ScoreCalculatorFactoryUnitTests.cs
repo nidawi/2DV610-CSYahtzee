@@ -6,7 +6,6 @@ using CSYahtzee.model;
 using CSYahtzee.model.rules;
 using CSYahtzee.model.rules.calculators;
 
-using Moq;
 using Xunit;
 
 namespace CSYahtzee.Tests.model.rules
