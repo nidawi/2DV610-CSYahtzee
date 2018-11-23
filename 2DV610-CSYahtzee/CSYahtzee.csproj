@@ -56,6 +56,7 @@
     <Compile Include="model\rules\calculators\AcesCalculator.cs" />
     <Compile Include="model\rules\calculators\FivesCalculator.cs" />
     <Compile Include="model\rules\calculators\FoursCalculator.cs" />
+    <Compile Include="model\rules\calculators\SixesCalculator.cs" />
     <Compile Include="model\rules\calculators\ThreesCalculator.cs" />
     <Compile Include="model\rules\calculators\TwosCalculator.cs" />
     <Compile Include="model\rules\DieFactory.cs" />

@@ -12,7 +12,8 @@ namespace CSYahtzee.model
     Twos,
     Threes,
     Fours,
-    Fives
+    Fives,
+    Sixes
   }
 
   public class Scoresheet : IScoresheet
