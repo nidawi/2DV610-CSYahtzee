@@ -8,10 +8,13 @@ namespace CSYahtzee.model
 {
   public class CategoryScore
   {
+    private ScoreCategory m_scoreCategory;
+
+    public ScoreCategory Category => throw new NotImplementedException();
 
     public CategoryScore(ScoreCategory a_scoreCategory)
     {
-
+      m_scoreCategory = a_scoreCategory;
     }
 
   }

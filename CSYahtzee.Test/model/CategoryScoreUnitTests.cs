@@ -31,5 +31,27 @@ namespace CSYahtzee.Tests.model
     {
       sut = new CategoryScore(a_scoreCategory);
     }
+
+    [Theory]
+    [InlineData(ScoreCategory.Aces)]
+    [InlineData(ScoreCategory.Twos)]
+    [InlineData(ScoreCategory.Threes)]
+    [InlineData(ScoreCategory.Fours)]
+    [InlineData(ScoreCategory.Fives)]
+    [InlineData(ScoreCategory.Sixes)]
+    [InlineData(ScoreCategory.ThreeOfAKind)]
+    [InlineData(ScoreCategory.FourOfAKind)]
+    [InlineData(ScoreCategory.FullHouse)]
+    [InlineData(ScoreCategory.SmallStraight)]
+    [InlineData(ScoreCategory.LargeStraight)]
+    [InlineData(ScoreCategory.Yahtzee)]
+    [InlineData(ScoreCategory.Chance)]
+    public void CategoryPropertyShouldReturnSetCategory(ScoreCategory a_scoreCategory)
+    {
+      sut = new CategoryScore(a_scoreCategory);
+      ScoreCategory expected = a_scoreCategory;
+      ScoreCategory actual = sut.Category;
+      Assert.Equal(expected, actual);
+    }
   }
 }
