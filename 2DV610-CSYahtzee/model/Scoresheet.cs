@@ -8,12 +8,16 @@ namespace CSYahtzee.model
 {
   public enum ScoreCategory
   {
+    // Upper section
     Aces,
     Twos,
     Threes,
     Fours,
     Fives,
-    Sixes
+    Sixes,
+
+    // Lower section
+    ThreeOfAKind
   }
 
   public class Scoresheet : IScoresheet
