@@ -15,7 +15,7 @@ namespace CSYahtzee.model
     public IReadOnlyList<int> FaceValues
     {
       get => throw new NotImplementedException();
-      set
+      private set
       {
         if (value.Count < 5 || value.Count > 6)
           throw new ArgumentOutOfRangeException();
@@ -23,8 +23,16 @@ namespace CSYahtzee.model
           throw new InvalidDieException();
       }
     }
-
-    public int Score => throw new NotImplementedException();
+    
+    public int Score
+    {
+      get => throw new NotImplementedException();
+      private set
+      {
+        if (value < 0)
+          throw new ArgumentOutOfRangeException();
+      }
+    }
 
     public CategoryScore(ScoreCategory a_scoreCategory)
     {
@@ -33,10 +41,8 @@ namespace CSYahtzee.model
 
     public void Set(int a_score, List<int> a_faceValues)
     {
+      Score = a_score;
       FaceValues = a_faceValues;
-
-      if (a_score < 0)
-        throw new ArgumentOutOfRangeException();
     }
   }
 }
