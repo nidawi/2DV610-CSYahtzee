@@ -82,5 +82,15 @@ namespace CSYahtzee.Tests.model
         sut.Set(25, new List<int>() { -1, -1, 9, 8, 1 }); // [1..6] is valid
       });
     }
+
+    [Fact]
+    public void SetShouldThrowWhenCalledWithNegativeScoreValue()
+    {
+      sut = new CategoryScore(ScoreCategory.Aces);
+      Assert.Throws<ArgumentOutOfRangeException>(delegate ()
+      {
+        sut.Set(-2, new List<int>() { 1, 1, 1, 1, 1 });
+      });
+    }
   }
 }
