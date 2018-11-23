@@ -42,10 +42,10 @@ namespace CSYahtzee.model.rules
           return new SmallStraightCalculator();
         case ScoreCategory.LargeStraight:
           return new LargeStraightCalculator();
+        case ScoreCategory.Yahtzee:
+          return new YahtzeeCalculator();
       }
- 
-      if (a_scoreCategory == ScoreCategory.Yahtzee)
-        return new YahtzeeCalculator();
+
       throw new NotImplementedException();
     }
   }
