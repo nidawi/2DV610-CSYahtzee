@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="model\DiceCupUnitTests.cs~RFa9c6fa7.TMP" />
+    <None Remove="model\ScoresheetUnitTests.cs~RF2a0f5531.TMP" />
     <None Remove="model\YahtzeeUnitTests.cs~RF14f1167a.TMP" />
     <None Remove="view\ConsoleUnitTests.cs~RF1528dc5e.TMP" />
   </ItemGroup>

@@ -29,7 +29,7 @@ namespace CSYahtzee.Tests.model
     [InlineData(ScoreCategory.Chance)]
     public void ConstructorShouldNotThrowWhenGivenValidCategory(ScoreCategory a_scoreCategory)
     {
-      sut = new CategoryScore(a_scoreCategory); // Could be any ScoreCategory-value.
+      sut = new CategoryScore(a_scoreCategory);
     }
   }
 }
