@@ -20,6 +20,9 @@ namespace CSYahtzee.model.rules
       if (a_scoreCategory == ScoreCategory.Aces)
         return new AcesCalculator();
 
+      if (a_scoreCategory == ScoreCategory.Twos)
+        return new TwosCalculator();
+
       throw new NotImplementedException();
     }
   }
