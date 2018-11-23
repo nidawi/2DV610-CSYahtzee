@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 using CSYahtzee.model;
 
@@ -108,6 +109,20 @@ namespace CSYahtzee.Tests.model
       int actual = sut.Score;
 
       Assert.Equal(expected, actual);
+    }
+
+    [Fact]
+    public void ShouldReturnGivenFaceValues()
+    {
+      int i = 0;
+      List<int> expected = new List<int>() { 1, 1, 1, 1, 1 };
+
+      sut = new CategoryScore(ScoreCategory.Aces);
+      sut.Set(25, expected);
+
+      IReadOnlyList<int> actual = sut.FaceValues;
+
+      Assert.True(actual.All(x => x == expected[i++]));
     }
   }
 }
