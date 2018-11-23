@@ -30,6 +30,7 @@ namespace CSYahtzee.Tests.model
     public void ConstructorShouldNotThrowWhenGivenValidCategory(ScoreCategory a_scoreCategory)
     {
       sut = new CategoryScore(a_scoreCategory);
+      Assert.True(sut != null);
     }
 
     [Theory]
