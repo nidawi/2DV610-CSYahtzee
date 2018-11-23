@@ -10,12 +10,13 @@ namespace CSYahtzee.model
   {
     private ScoreCategory m_scoreCategory;
     private int? m_score;
+    private List<int> m_faceValues;
 
     public ScoreCategory Category => m_scoreCategory;
 
     public IReadOnlyList<int> FaceValues
     {
-      get => throw new NotImplementedException();
+      get => m_faceValues;
       private set
       {
         if (value.Count < 5 || value.Count > 6)
@@ -41,6 +42,7 @@ namespace CSYahtzee.model
     {
       m_scoreCategory = a_scoreCategory;
       m_score = null;
+      m_faceValues = new List<int>();
     }
 
     public void Set(int a_score, List<int> a_faceValues)
