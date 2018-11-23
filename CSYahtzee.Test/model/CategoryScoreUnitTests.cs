@@ -72,5 +72,15 @@ namespace CSYahtzee.Tests.model
         sut.Set(25, new List<int>() { 1, 1, 1 }); // 5 or 6 dice is valid.
       });
     }
+
+    [Fact]
+    public void SetShouldThrowWhenCalledWithAnyInvalidDiceFaceValues()
+    {
+      sut = new CategoryScore(ScoreCategory.Aces);
+      Assert.Throws<InvalidDieException>(delegate ()
+      {
+        sut.Set(25, new List<int>() { -1, -1, 9, 8, 1 }); // [1..6] is valid
+      });
+    }
   }
 }
