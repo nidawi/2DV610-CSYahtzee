@@ -59,7 +59,8 @@ namespace CSYahtzee.Tests.model
     public void SetShouldNotThrowWhenCalledWithValidArguments()
     {
       sut = new CategoryScore(ScoreCategory.Aces);
-      sut.Set(25, new List<int>() { 1, 1, 1, 1, 1 });
+      List<int> faceValues = new List<int>() { 1, 1, 1, 1, 1 };
+      sut.Set(25, faceValues);
     }
   }
 }
