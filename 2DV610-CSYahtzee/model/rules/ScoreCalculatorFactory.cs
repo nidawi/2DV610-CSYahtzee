@@ -30,10 +30,9 @@ namespace CSYahtzee.model.rules
           return new FoursCalculator();
         case ScoreCategory.Fives:
           return new FivesCalculator();
+        case ScoreCategory.Sixes:
+          return new SixesCalculator();
       }
-
-      if (a_scoreCategory == ScoreCategory.Sixes)
-        return new SixesCalculator();
 
       throw new NotImplementedException();
     }
