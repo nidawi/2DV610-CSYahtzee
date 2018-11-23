@@ -27,6 +27,7 @@ namespace CSYahtzee.Tests.model.rules
     [InlineData(ScoreCategory.FullHouse, typeof(FullHouseCalculator))]
     [InlineData(ScoreCategory.SmallStraight, typeof(SmallStraightCalculator))]
     [InlineData(ScoreCategory.LargeStraight, typeof(LargeStraightCalculator))]
+    [InlineData(ScoreCategory.Yahtzee, typeof(YahtzeeCalculator))]
     public void ShouldReturnACalculatorBasedOnEnum(ScoreCategory a_scoreCategory, Type a_type)
     {
       sut = new ScoreCalculatorFactory();

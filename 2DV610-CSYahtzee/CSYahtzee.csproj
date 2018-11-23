@@ -64,6 +64,7 @@
     <Compile Include="model\rules\calculators\ThreeOfAKindCalculator.cs" />
     <Compile Include="model\rules\calculators\ThreesCalculator.cs" />
     <Compile Include="model\rules\calculators\TwosCalculator.cs" />
+    <Compile Include="model\rules\calculators\YahtzeeCalculator.cs" />
     <Compile Include="model\rules\DieFactory.cs" />
     <Compile Include="model\rules\IDieFactory.cs" />
     <Compile Include="model\rules\IPlayerFactory.cs" />

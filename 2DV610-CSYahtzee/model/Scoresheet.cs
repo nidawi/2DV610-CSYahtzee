@@ -21,7 +21,8 @@ namespace CSYahtzee.model
     FourOfAKind,
     FullHouse,
     SmallStraight,
-    LargeStraight
+    LargeStraight,
+    Yahtzee
   }
 
   public class Scoresheet : IScoresheet
