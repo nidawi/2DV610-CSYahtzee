@@ -21,5 +21,6 @@ namespace CSYahtzee.Tests.model
         sut = new Scoresheet(null);
       });
     }
+
   }
 }

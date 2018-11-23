@@ -8,5 +8,6 @@ namespace CSYahtzee.model.rules
 {
   public interface IScoreCalculator
   {
+    int CalculateScore(IReadOnlyList<int> a_faceValues);
   }
 }

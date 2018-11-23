@@ -4,13 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSYahtzee.model.rules.calculators
+namespace CSYahtzee.model
 {
-  public class FivesCalculator : IScoreCalculator
+  public class CategoryScore
   {
-    public int CalculateScore(IReadOnlyList<int> a_faceValues)
+
+
+    public CategoryScore(ScoreCategory a_scoreCategory)
     {
       throw new NotImplementedException();
     }
+
+
   }
 }

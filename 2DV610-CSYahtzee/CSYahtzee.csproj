@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\PlayYahtzee.cs" />
+    <Compile Include="model\CategoryScore.cs" />
     <Compile Include="model\DiceCup.cs" />
     <Compile Include="model\Die.cs" />
     <Compile Include="model\IDiceCup.cs" />

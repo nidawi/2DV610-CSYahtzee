@@ -8,6 +8,9 @@ namespace CSYahtzee.model.rules.calculators
 {
   public class SmallStraightCalculator : IScoreCalculator
   {
-
+    public int CalculateScore(IReadOnlyList<int> a_faceValues)
+    {
+      throw new NotImplementedException();
+    }
   }
 }

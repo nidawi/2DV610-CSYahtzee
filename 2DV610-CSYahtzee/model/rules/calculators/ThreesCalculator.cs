@@ -8,6 +8,9 @@ namespace CSYahtzee.model.rules.calculators
 {
   public class ThreesCalculator : IScoreCalculator
   {
-
+    public int CalculateScore(IReadOnlyList<int> a_faceValues)
+    {
+      throw new NotImplementedException();
+    }
   }
 }
