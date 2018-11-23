@@ -53,10 +53,13 @@
     <Compile Include="model\IYahtzee.cs" />
     <Compile Include="model\ModelExceptions.cs" />
     <Compile Include="model\Player.cs" />
+    <Compile Include="model\rules\calculators\AcesCalculator.cs" />
     <Compile Include="model\rules\DieFactory.cs" />
     <Compile Include="model\rules\IDieFactory.cs" />
     <Compile Include="model\rules\IPlayerFactory.cs" />
-    <Compile Include="model\rules\IYahtzeeGameRulesAbstractFactory.cs" />
+    <Compile Include="model\rules\IScoreCalculator.cs" />
+    <Compile Include="model\rules\IScoreCalculatorFactory.cs" />
+    <Compile Include="model\rules\ScoreCalculatorFactory.cs" />
     <Compile Include="model\Scoresheet.cs" />
     <Compile Include="model\Yahtzee.cs" />
     <Compile Include="Program.cs" />

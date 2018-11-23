@@ -17,7 +17,7 @@ namespace CSYahtzee.model
 
     public int PlayerCount => m_players.Count;
 
-    public Yahtzee(rules.IPlayerFactory a_playerFactory, rules.IYahtzeeGameRulesAbstractFactory a_ruleFactory)
+    public Yahtzee(rules.IPlayerFactory a_playerFactory, rules.IScoreCalculatorFactory a_ruleFactory)
     {
       if (a_playerFactory == null || a_ruleFactory == null)
       {

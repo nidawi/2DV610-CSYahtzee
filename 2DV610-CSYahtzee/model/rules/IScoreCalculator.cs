@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSYahtzee.model.rules
 {
-  public interface IScoreCalculatorFactory
+  public interface IScoreCalculator
   {
-    IScoreCalculator GetScoreCalculator(ScoreCategory a_scoreCategory);
   }
 }

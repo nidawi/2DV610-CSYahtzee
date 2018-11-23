@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace CSYahtzee.model
 {
+  public enum ScoreCategory
+  {
+    Aces
+  }
+
   public class Scoresheet : IScoresheet
   {
     public Scoresheet(rules.IScoreCalculatorFactory a_scoreFactory)
