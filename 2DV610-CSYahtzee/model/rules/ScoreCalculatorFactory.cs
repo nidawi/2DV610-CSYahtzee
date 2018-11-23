@@ -37,7 +37,8 @@ namespace CSYahtzee.model.rules
         case ScoreCategory.FourOfAKind:
           return new FourOfAKindCalculator();
       }
-
+      if (a_scoreCategory == ScoreCategory.FullHouse)
+        return new FullHouseCalculator();
       throw new NotImplementedException();
     }
   }
