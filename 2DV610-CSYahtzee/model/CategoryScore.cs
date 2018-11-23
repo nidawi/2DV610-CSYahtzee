@@ -34,6 +34,9 @@ namespace CSYahtzee.model
     public void Set(int a_score, List<int> a_faceValues)
     {
       FaceValues = a_faceValues;
+
+      if (a_score < 0)
+        throw new ArgumentOutOfRangeException();
     }
   }
 }
