@@ -25,6 +25,9 @@ namespace CSYahtzee.model.rules
           return new TwosCalculator();
       }
 
+      if (a_scoreCategory == ScoreCategory.Threes)
+        return new ThreesCalculator();
+
       throw new NotImplementedException();
     }
   }
