@@ -43,7 +43,9 @@ namespace CSYahtzee.model.rules
         case ScoreCategory.LargeStraight:
           return new LargeStraightCalculator();
       }
-
+ 
+      if (a_scoreCategory == ScoreCategory.Yahtzee)
+        return new YahtzeeCalculator();
       throw new NotImplementedException();
     }
   }
