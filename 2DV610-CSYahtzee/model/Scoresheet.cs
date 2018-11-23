@@ -18,7 +18,8 @@ namespace CSYahtzee.model
 
     // Lower section
     ThreeOfAKind,
-    FourOfAKind
+    FourOfAKind,
+    FullHouse
   }
 
   public class Scoresheet : IScoresheet
