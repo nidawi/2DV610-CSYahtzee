@@ -41,7 +41,8 @@ namespace CSYahtzee.model.rules
         case ScoreCategory.SmallStraight:
           return new SmallStraightCalculator();
       }
-
+      if (a_scoreCategory == ScoreCategory.LargeStraight)
+        return new LargeStraightCalculator();
       throw new NotImplementedException();
     }
   }
