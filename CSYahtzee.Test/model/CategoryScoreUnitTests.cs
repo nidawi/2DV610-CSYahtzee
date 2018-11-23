@@ -83,6 +83,10 @@ namespace CSYahtzee.Tests.model
       });
     }
 
+
+    // We may need to redesign this project so that Die.cs is used instead of simple int values.
+    // We opted for this design as we figured that only DiceCup.cs should know about its dice.
+    // The further along that we get, however, we realize that this might not have been the best idea.
     [Fact]
     public void SetShouldThrowWhenCalledWithNegativeScoreValue()
     {
