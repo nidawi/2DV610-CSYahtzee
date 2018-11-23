@@ -17,7 +17,8 @@ namespace CSYahtzee.model
     Sixes,
 
     // Lower section
-    ThreeOfAKind
+    ThreeOfAKind,
+    FourOfAKind
   }
 
   public class Scoresheet : IScoresheet

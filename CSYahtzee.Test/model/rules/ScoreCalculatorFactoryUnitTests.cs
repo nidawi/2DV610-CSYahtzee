@@ -23,6 +23,7 @@ namespace CSYahtzee.Tests.model.rules
     [InlineData(ScoreCategory.Fives, typeof(FivesCalculator))]
     [InlineData(ScoreCategory.Sixes, typeof(SixesCalculator))]
     [InlineData(ScoreCategory.ThreeOfAKind, typeof(ThreeOfAKindCalculator))]
+    [InlineData(ScoreCategory.FourOfAKind, typeof(FourOfAKindCalculator))]
     public void ShouldReturnACalculatorBasedOnEnum(ScoreCategory a_scoreCategory, Type a_type)
     {
       sut = new ScoreCalculatorFactory();
