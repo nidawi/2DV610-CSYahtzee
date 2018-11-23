@@ -9,6 +9,7 @@ namespace CSYahtzee.model
   public class CategoryScore
   {
     private ScoreCategory m_scoreCategory;
+    private int? m_score;
 
     public ScoreCategory Category => m_scoreCategory;
 
@@ -26,17 +27,20 @@ namespace CSYahtzee.model
     
     public int Score
     {
-      get => throw new NotImplementedException();
+      get => m_score.HasValue ? m_score.Value : throw new NotImplementedException();
       private set
       {
         if (value < 0)
           throw new ArgumentOutOfRangeException();
+
+        m_score = value;
       }
     }
 
     public CategoryScore(ScoreCategory a_scoreCategory)
     {
       m_scoreCategory = a_scoreCategory;
+      m_score = null;
     }
 
     public void Set(int a_score, List<int> a_faceValues)
