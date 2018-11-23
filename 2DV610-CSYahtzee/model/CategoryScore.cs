@@ -21,7 +21,7 @@ namespace CSYahtzee.model
 
     public void Set(int a_score, List<int> a_faceValues)
     {
-      throw new NotImplementedException();
+
     }
   }
 }
