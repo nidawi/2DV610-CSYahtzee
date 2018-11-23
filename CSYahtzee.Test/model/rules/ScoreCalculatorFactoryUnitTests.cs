@@ -14,6 +14,7 @@ namespace CSYahtzee.Tests.model.rules
   {
     private ScoreCalculatorFactory sut;
 
+    // It is our Theory that this Theory is a good one.
     [Theory]
     [InlineData(ScoreCategory.Aces, typeof(AcesCalculator))]
     [InlineData(ScoreCategory.Twos, typeof(TwosCalculator))]

@@ -17,16 +17,16 @@ namespace CSYahtzee.model.rules
     /// <returns>a Score Calculator.</returns>
     public IScoreCalculator GetScoreCalculator(ScoreCategory a_scoreCategory)
     {
+      // Like C Martin said, Switches are ugly, but they're OK in a Factory.
       switch (a_scoreCategory)
       {
         case ScoreCategory.Aces:
           return new AcesCalculator();
         case ScoreCategory.Twos:
           return new TwosCalculator();
+        case ScoreCategory.Threes:
+          return new ThreesCalculator();
       }
-
-      if (a_scoreCategory == ScoreCategory.Threes)
-        return new ThreesCalculator();
 
       throw new NotImplementedException();
     }
