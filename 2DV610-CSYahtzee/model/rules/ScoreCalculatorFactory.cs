@@ -12,6 +12,9 @@ namespace CSYahtzee.model.rules
   {
     public IScoreCalculator GetScoreCalculator(ScoreCategory a_scoreCategory)
     {
+      if (a_scoreCategory == ScoreCategory.Aces)
+        return new AcesCalculator();
+
       throw new NotImplementedException();
     }
   }
