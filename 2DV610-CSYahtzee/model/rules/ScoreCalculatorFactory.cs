@@ -33,7 +33,8 @@ namespace CSYahtzee.model.rules
         case ScoreCategory.Sixes:
           return new SixesCalculator();
       }
-
+      if (a_scoreCategory == ScoreCategory.ThreeOfAKind)
+        return new ThreeOfAKindCalculator();
       throw new NotImplementedException();
     }
   }
