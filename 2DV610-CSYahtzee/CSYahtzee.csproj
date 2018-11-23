@@ -58,6 +58,7 @@
     <Compile Include="model\rules\calculators\FourOfAKindCalculator.cs" />
     <Compile Include="model\rules\calculators\FoursCalculator.cs" />
     <Compile Include="model\rules\calculators\FullHouseCalculator.cs" />
+    <Compile Include="model\rules\calculators\LargeStraightCalculator.cs" />
     <Compile Include="model\rules\calculators\SixesCalculator.cs" />
     <Compile Include="model\rules\calculators\SmallStraightCalculator.cs" />
     <Compile Include="model\rules\calculators\ThreeOfAKindCalculator.cs" />
