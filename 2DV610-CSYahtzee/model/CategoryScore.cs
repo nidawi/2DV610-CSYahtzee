@@ -21,7 +21,8 @@ namespace CSYahtzee.model
 
     public void Set(int a_score, List<int> a_faceValues)
     {
-
+      if (a_faceValues.Count < 5 || a_faceValues.Count > 6)
+        throw new ArgumentOutOfRangeException();
     }
   }
 }
