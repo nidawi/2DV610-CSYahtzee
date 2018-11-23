@@ -96,5 +96,18 @@ namespace CSYahtzee.Tests.model
         sut.Set(-2, new List<int>() { 1, 1, 1, 1, 1 });
       });
     }
+
+    [Fact]
+    public void ShouldReturnGivenScore()
+    {
+      int expected = 25;
+
+      sut = new CategoryScore(ScoreCategory.Aces);
+      sut.Set(expected, new List<int>() { 1, 1, 1, 1, 1 });
+
+      int actual = sut.Score;
+
+      Assert.Equal(expected, actual);
+    }
   }
 }
