@@ -44,10 +44,11 @@ namespace CSYahtzee.model.rules
           return new LargeStraightCalculator();
         case ScoreCategory.Yahtzee:
           return new YahtzeeCalculator();
+        case ScoreCategory.Chance:
+          return new ChanceCalculator();
+        default:
+          throw new NotImplementedException();
       }
-      if (a_scoreCategory == ScoreCategory.Chance)
-        return new ChanceCalculator();
-      throw new NotImplementedException();
     }
   }
 }
