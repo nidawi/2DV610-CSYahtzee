@@ -39,7 +39,8 @@ namespace CSYahtzee.model.rules
         case ScoreCategory.FullHouse:
           return new FullHouseCalculator();
       }
-
+      if (a_scoreCategory == ScoreCategory.SmallStraight)
+        return new SmallStraightCalculator();
       throw new NotImplementedException();
     }
   }
