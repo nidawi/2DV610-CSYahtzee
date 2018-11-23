@@ -9,7 +9,8 @@ namespace CSYahtzee.model
   public enum ScoreCategory
   {
     Aces,
-    Twos
+    Twos,
+    Threes
   }
 
   public class Scoresheet : IScoresheet
