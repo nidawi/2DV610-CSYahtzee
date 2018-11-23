@@ -19,6 +19,8 @@ namespace CSYahtzee.model
       {
         if (value.Count < 5 || value.Count > 6)
           throw new ArgumentOutOfRangeException();
+        else if (value.Any(x => x < 1 || x > 6))
+          throw new InvalidDieException();
       }
     }
 
@@ -32,9 +34,6 @@ namespace CSYahtzee.model
     public void Set(int a_score, List<int> a_faceValues)
     {
       FaceValues = a_faceValues;
-
-      if (a_faceValues.Any(x => x < 1 || x > 6))
-        throw new InvalidDieException();
     }
   }
 }
