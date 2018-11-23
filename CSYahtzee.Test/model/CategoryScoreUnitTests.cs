@@ -54,5 +54,12 @@ namespace CSYahtzee.Tests.model
       ScoreCategory actual = sut.Category;
       Assert.Equal(expected, actual);
     }
+
+    [Fact]
+    public void SetShouldNotThrowWhenCalledWithValidArguments()
+    {
+      sut = new CategoryScore(ScoreCategory.Aces);
+      sut.Set(25, new List<int>() { 1, 1, 1, 1, 1 });
+    }
   }
 }
