@@ -28,7 +28,7 @@ namespace CSYahtzee.model
     
     public int Score
     {
-      get => m_score.HasValue ? m_score.Value : throw new NotImplementedException(); // Still need to test what happens if score isn't set.
+      get => m_score.HasValue ? m_score.Value : throw new NotImplementedException(); // TODO: Still need to test what happens if score isn't set.
       private set
       {
         if (value < 0)

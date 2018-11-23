@@ -122,6 +122,7 @@ namespace CSYahtzee.Tests.model
 
       IReadOnlyList<int> actual = sut.FaceValues;
 
+      // TODO: Refactor this later.
       Assert.True(actual.All(x => x == expected[i++]));
     }
   }
