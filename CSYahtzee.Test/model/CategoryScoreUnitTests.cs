@@ -62,5 +62,15 @@ namespace CSYahtzee.Tests.model
       List<int> faceValues = new List<int>() { 1, 1, 1, 1, 1 };
       sut.Set(25, faceValues);
     }
+
+    [Fact]
+    public void SetShouldThrowWhenCalledWithInvalidNumberOfDiceFaceValues()
+    {
+      sut = new CategoryScore(ScoreCategory.Aces);
+      Assert.Throws<ArgumentOutOfRangeException>(delegate ()
+      {
+        sut.Set(25, new List<int>() { 1, 1, 1 }); // 5 or 6 dice is valid.
+      });
+    }
   }
 }
