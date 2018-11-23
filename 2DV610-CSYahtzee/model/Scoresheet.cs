@@ -10,7 +10,8 @@ namespace CSYahtzee.model
   {
     Aces,
     Twos,
-    Threes
+    Threes,
+    Fours
   }
 
   public class Scoresheet : IScoresheet

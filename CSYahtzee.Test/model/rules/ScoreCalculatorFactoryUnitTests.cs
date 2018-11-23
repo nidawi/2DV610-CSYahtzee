@@ -19,6 +19,7 @@ namespace CSYahtzee.Tests.model.rules
     [InlineData(ScoreCategory.Aces, typeof(AcesCalculator))]
     [InlineData(ScoreCategory.Twos, typeof(TwosCalculator))]
     [InlineData(ScoreCategory.Threes, typeof(ThreesCalculator))]
+    [InlineData(ScoreCategory.Fours, typeof(FoursCalculator))]
     public void ShouldReturnACalculatorBasedOnEnum(ScoreCategory a_scoreCategory, Type a_type)
     {
       sut = new ScoreCalculatorFactory();
