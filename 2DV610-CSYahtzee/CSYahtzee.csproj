@@ -54,6 +54,7 @@
     <Compile Include="model\ModelExceptions.cs" />
     <Compile Include="model\Player.cs" />
     <Compile Include="model\rules\calculators\AcesCalculator.cs" />
+    <Compile Include="model\rules\calculators\ChanceCalculator.cs" />
     <Compile Include="model\rules\calculators\FivesCalculator.cs" />
     <Compile Include="model\rules\calculators\FourOfAKindCalculator.cs" />
     <Compile Include="model\rules\calculators\FoursCalculator.cs" />

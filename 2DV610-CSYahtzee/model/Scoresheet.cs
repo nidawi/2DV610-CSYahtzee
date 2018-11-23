@@ -22,7 +22,8 @@ namespace CSYahtzee.model
     FullHouse,
     SmallStraight,
     LargeStraight,
-    Yahtzee
+    Yahtzee,
+    Chance
   }
 
   public class Scoresheet : IScoresheet

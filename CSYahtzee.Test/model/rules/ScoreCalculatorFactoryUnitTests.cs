@@ -28,6 +28,7 @@ namespace CSYahtzee.Tests.model.rules
     [InlineData(ScoreCategory.SmallStraight, typeof(SmallStraightCalculator))]
     [InlineData(ScoreCategory.LargeStraight, typeof(LargeStraightCalculator))]
     [InlineData(ScoreCategory.Yahtzee, typeof(YahtzeeCalculator))]
+    [InlineData(ScoreCategory.Chance, typeof(ChanceCalculator))]
     public void ShouldReturnACalculatorBasedOnEnum(ScoreCategory a_scoreCategory, Type a_type)
     {
       sut = new ScoreCalculatorFactory();
