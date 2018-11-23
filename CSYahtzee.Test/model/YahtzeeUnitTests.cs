@@ -50,11 +50,11 @@ namespace CSYahtzee.Tests.model
       Assert.Equal(2, sut.PlayerCount);
     }
 
-    private CSYahtzee.model.rules.IYahtzeeGameRulesAbstractFactory MockedGameRulesFactory
+    private CSYahtzee.model.rules.IScoreCalculatorFactory MockedGameRulesFactory
     {
       get
       {
-        var mockedGameRulesFactory = new Mock<CSYahtzee.model.rules.IYahtzeeGameRulesAbstractFactory>();
+        var mockedGameRulesFactory = new Mock<CSYahtzee.model.rules.IScoreCalculatorFactory>();
         // no functionality yet
 
         return mockedGameRulesFactory.Object;
