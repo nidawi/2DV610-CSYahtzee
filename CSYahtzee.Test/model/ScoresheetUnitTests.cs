@@ -22,5 +22,25 @@ namespace CSYahtzee.Tests.model
       });
     }
 
+    [Fact]
+    public void RegisterScoreShouldThrowWhenNotGivenAPlayer()
+    {
+      sut = new Scoresheet(MockedFactory.Object);
+    
+      Assert.Throws<ArgumentNullException>(delegate ()
+      {
+        sut.RegisterScore(null, ScoreCategory.Aces, new List<int> { 1, 1, 1, 1, 1 });
+      });
+    }
+
+    private Mock<CSYahtzee.model.rules.IScoreCalculatorFactory> MockedFactory
+    {
+      get
+      {
+        var mockedFactory = new Mock<CSYahtzee.model.rules.IScoreCalculatorFactory>();
+
+        return mockedFactory;
+      }
+    }
   }
 }
