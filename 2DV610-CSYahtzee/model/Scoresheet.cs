@@ -41,5 +41,10 @@ namespace CSYahtzee.model
         throw new ArgumentNullException();
     }
 
+    public CategoryScore GetScore(IPlayer a_player, ScoreCategory a_scoreCatagory)
+    {
+      throw new NotImplementedException();
+    }
+
   }
 }

@@ -33,6 +33,17 @@ namespace CSYahtzee.Tests.model
       });
     }
 
+    [Fact]
+    public void GetScoreShouldShouldThrowWhenNotGivenAPlayer()
+    {
+      sut = new Scoresheet(MockedFactory.Object);
+
+      Assert.Throws<ArgumentNullException>(delegate ()
+      {
+        sut.GetScore(null, ScoreCategory.Aces);
+      });
+    }
+
     private Mock<CSYahtzee.model.rules.IScoreCalculatorFactory> MockedFactory
     {
       get
