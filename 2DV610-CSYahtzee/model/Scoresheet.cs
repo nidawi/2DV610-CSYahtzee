@@ -37,7 +37,7 @@ namespace CSYahtzee.model
 
     public void RegisterScore(IPlayer a_player, ScoreCategory a_scoreCatagory, List<int> a_faceValues)
     {
-      if (a_player == null) throw new NotImplementedException();
+      if (a_player == null) throw new ArgumentNullException();
     }
 
   }
