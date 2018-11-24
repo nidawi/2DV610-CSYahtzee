@@ -29,26 +29,23 @@ namespace CSYahtzee.model
   public class Scoresheet : IScoresheet
   {
 
-
     public Scoresheet(rules.IScoreCalculatorFactory a_scoreFactory)
     {
       if (a_scoreFactory == null)
-        throw new ArgumentNullException();
-
-      
+        throw new ArgumentNullException();     
     }
 
     public void RegisterScore(IPlayer a_player, ScoreCategory a_scoreCatagory, List<int> a_faceValues)
     {
       if (a_player == null) 
         throw new ArgumentNullException();
-
-   
     }
 
     public CategoryScore GetScore(IPlayer a_player, ScoreCategory a_scoreCatagory)
     {
-      if (a_player == null) throw new ArgumentNullException();
+      if (a_player == null) 
+        throw new ArgumentNullException();
+
       throw new NotImplementedException();
     }
 
