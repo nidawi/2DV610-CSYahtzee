@@ -49,10 +49,13 @@ namespace CSYahtzee.model
       int score = m_scoreFactory.GetScoreCalculator(a_scoreCatagory).CalculateScore(a_faceValues);
       categoryScore.Set(score, a_faceValues);
 
-      Dictionary<ScoreCategory, CategoryScore> playerScore = new Dictionary<ScoreCategory, CategoryScore>();
+      bool playerAlreadyExists = m_playerScores.ContainsKey(a_player);
+
+      Dictionary<ScoreCategory, CategoryScore> playerScore = playerAlreadyExists ? GetPlayerScore(a_player) : new Dictionary<ScoreCategory, CategoryScore>();
       playerScore.Add(a_scoreCatagory, categoryScore);
 
-      m_playerScores.Add(a_player, playerScore);
+      if (!playerAlreadyExists)
+        m_playerScores.Add(a_player, playerScore);
     }
 
     public CategoryScore GetScore(IPlayer a_player, ScoreCategory a_scoreCatagory)
