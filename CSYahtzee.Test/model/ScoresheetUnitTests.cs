@@ -75,7 +75,7 @@ namespace CSYahtzee.Tests.model
         expected.FaceValues[2] == actual.FaceValues[2] &&
         expected.FaceValues[3] == actual.FaceValues[3] &&
         expected.FaceValues[4] == actual.FaceValues[4] &&
-        expected.Score == expected.Score
+        expected.Score == actual.Score
       );
     }
 

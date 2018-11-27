@@ -28,16 +28,31 @@ namespace CSYahtzee.model
 
   public class Scoresheet : IScoresheet
   {
+    private Dictionary<IPlayer, Dictionary<ScoreCategory, CategoryScore>> m_playerScores;
+    private rules.IScoreCalculatorFactory m_scoreFactory;
+
     public Scoresheet(rules.IScoreCalculatorFactory a_scoreFactory)
     {
       if (a_scoreFactory == null)
         throw new ArgumentNullException();
+
+      m_playerScores = new Dictionary<IPlayer, Dictionary<ScoreCategory, CategoryScore>>();
+      m_scoreFactory = a_scoreFactory;
     }
 
     public void RegisterScore(IPlayer a_player, ScoreCategory a_scoreCatagory, List<int> a_faceValues)
     {
       if (a_player == null)
         throw new ArgumentNullException();
+
+      CategoryScore categoryScore = new CategoryScore(a_scoreCatagory);
+      int score = m_scoreFactory.GetScoreCalculator(a_scoreCatagory).CalculateScore((IReadOnlyList<int>)a_faceValues);
+      categoryScore.Set(score, a_faceValues);
+
+      Dictionary<ScoreCategory, CategoryScore> playerScore = new Dictionary<ScoreCategory, CategoryScore>();
+      playerScore.Add(a_scoreCatagory, categoryScore);
+
+      m_playerScores.Add(a_player, playerScore);
     }
 
     public CategoryScore GetScore(IPlayer a_player, ScoreCategory a_scoreCatagory)
@@ -45,7 +60,18 @@ namespace CSYahtzee.model
       if (a_player == null)
         throw new ArgumentNullException();
 
-      throw new NotImplementedException();
+      // TODO: refactor
+      var data = m_playerScores
+       .Where(a => a.Key == a_player)
+       .Select(e => e.Value)
+       .First();
+
+      var score = data
+        .Where(e => e.Key == a_scoreCatagory)
+        .Select(e => e.Value)
+        .First();
+
+      return score;
     }
   }
 }
