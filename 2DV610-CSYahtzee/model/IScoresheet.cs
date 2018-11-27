@@ -8,6 +8,6 @@ namespace CSYahtzee.model
 {
   public interface IScoresheet
   {
-
+    CategoryScore GetScore(IPlayer a_player, ScoreCategory a_scoreCatagory);
   }
 }

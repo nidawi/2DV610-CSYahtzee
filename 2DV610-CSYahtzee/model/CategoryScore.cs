@@ -23,6 +23,7 @@ namespace CSYahtzee.model
           throw new ArgumentOutOfRangeException();
         else if (value.Any(x => x < 1 || x > 6))
           throw new InvalidDieException();
+        m_faceValues = value.ToList();
       }
     }
     
