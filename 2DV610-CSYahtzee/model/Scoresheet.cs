@@ -45,8 +45,10 @@ namespace CSYahtzee.model
       if (a_player == null)
         throw new ArgumentNullException();
 
+      rules.IScoreCalculator calculator = m_scoreFactory.GetScoreCalculator(a_scoreCatagory);      
+      int score = calculator.CalculateScore(a_faceValues);
+
       CategoryScore categoryScore = new CategoryScore(a_scoreCatagory);
-      int score = m_scoreFactory.GetScoreCalculator(a_scoreCatagory).CalculateScore(a_faceValues);
       categoryScore.Set(score, a_faceValues);
 
       bool playerAlreadyExists = m_playerScores.ContainsKey(a_player);

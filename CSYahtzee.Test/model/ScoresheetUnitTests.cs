@@ -14,6 +14,8 @@ namespace CSYahtzee.Tests.model
   {
     private Scoresheet sut;
 
+    private int m_defaultScore = 25;
+
     [Fact]
     public void ConstructorShouldThrowNullArgumentExceptionIfNotGivenAScoreFactory()
     {
@@ -59,11 +61,8 @@ namespace CSYahtzee.Tests.model
 
       sut = new Scoresheet(MockedFactory.Object);
 
-      CategoryScore expected = new CategoryScore(ScoreCategory.Aces);
-
       List<int> faceValues = new List<int>() { 1, 1, 1, 1, 1 };
-      
-      expected.Set(25, faceValues);
+      CategoryScore expected = BuildCategoryScore(ScoreCategory.Aces, m_defaultScore, faceValues);
 
       IPlayer player = MockedPlayerFactory.Object;
 
@@ -71,15 +70,7 @@ namespace CSYahtzee.Tests.model
 
       CategoryScore actual = sut.GetScore(player, ScoreCategory.Aces);
 
-      // TODO: probably refactor this Assert-statement.
-      Assert.True(expected.Category == actual.Category &&
-        expected.FaceValues[0] == actual.FaceValues[0] &&
-        expected.FaceValues[1] == actual.FaceValues[1] &&
-        expected.FaceValues[2] == actual.FaceValues[2] &&
-        expected.FaceValues[3] == actual.FaceValues[3] &&
-        expected.FaceValues[4] == actual.FaceValues[4] &&
-        expected.Score == actual.Score
-      );
+      Assert.True(CategoryScoresEqual(expected, actual));
     }
 
     [Fact]
@@ -87,14 +78,11 @@ namespace CSYahtzee.Tests.model
     {
       sut = new Scoresheet(MockedFactory.Object);
 
-      // TODO: refactor.
-      CategoryScore expected1 = new CategoryScore(ScoreCategory.Aces);
       List<int> faceValues1 = new List<int>() { 1, 1, 1, 1, 1 };
-      expected1.Set(25, faceValues1);
+      CategoryScore expected1 = BuildCategoryScore(ScoreCategory.Aces, m_defaultScore, faceValues1);
 
-      CategoryScore expected2 = new CategoryScore(ScoreCategory.Twos);
       List<int> faceValues2 = new List<int>() { 2, 2, 2, 2, 2 };
-      expected2.Set(25, faceValues2);
+      CategoryScore expected2 = BuildCategoryScore(ScoreCategory.Twos, m_defaultScore, faceValues2);
 
       IPlayer player = MockedPlayerFactory.Object;
 
@@ -104,23 +92,28 @@ namespace CSYahtzee.Tests.model
       CategoryScore actual1 = sut.GetScore(player, ScoreCategory.Aces);
       CategoryScore actual2 = sut.GetScore(player, ScoreCategory.Twos);
 
-      // TODO: probably refactor this Assert-statement.
-      Assert.True(expected1.Category == actual1.Category &&
-        expected1.FaceValues[0] == actual1.FaceValues[0] &&
-        expected1.FaceValues[1] == actual1.FaceValues[1] &&
-        expected1.FaceValues[2] == actual1.FaceValues[2] &&
-        expected1.FaceValues[3] == actual1.FaceValues[3] &&
-        expected1.FaceValues[4] == actual1.FaceValues[4] &&
-        expected1.Score == actual1.Score &&
-        expected2.Category == actual2.Category &&
-        expected2.FaceValues[0] == actual2.FaceValues[0] &&
-        expected2.FaceValues[1] == actual2.FaceValues[1] &&
-        expected2.FaceValues[2] == actual2.FaceValues[2] &&
-        expected2.FaceValues[3] == actual2.FaceValues[3] &&
-        expected2.FaceValues[4] == actual2.FaceValues[4] &&
-        expected2.Score == actual2.Score
-      );
+      Assert.True(CategoryScoresEqual(expected1, actual1) && CategoryScoresEqual(expected2, actual2));
     }
+
+    // Helper methods
+
+    private bool CategoryScoresEqual(CategoryScore a_expected, CategoryScore a_actual)
+    {
+      bool hasSameFaceValues = Enumerable.SequenceEqual(a_expected.FaceValues, a_actual.FaceValues);
+      bool hasSameCategory = a_expected.Category == a_actual.Category;
+      bool hasSameScore = a_expected.Score == a_actual.Score;
+
+      return hasSameFaceValues && hasSameCategory && hasSameScore;
+    }
+
+    private CategoryScore BuildCategoryScore(ScoreCategory a_scoreCategory, int a_score, List<int> a_faceValues)
+    {
+      CategoryScore categoryScore = new CategoryScore(a_scoreCategory);
+      categoryScore.Set(a_score, a_faceValues);
+      return categoryScore;
+    }
+
+    // Factories
 
     private Mock<CSYahtzee.model.rules.IScoreCalculator> MockedCalculator
     {
