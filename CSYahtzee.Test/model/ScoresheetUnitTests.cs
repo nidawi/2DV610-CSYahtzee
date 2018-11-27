@@ -60,11 +60,14 @@ namespace CSYahtzee.Tests.model
       sut = new Scoresheet(MockedFactory.Object);
 
       CategoryScore expected = new CategoryScore(ScoreCategory.Aces);
-      expected.Set(25, new List<int>() { 1, 1, 1, 1, 1 });
+
+      List<int> faceValues = new List<int>() { 1, 1, 1, 1, 1 };
+      
+      expected.Set(25, faceValues);
 
       IPlayer player = MockedPlayerFactory.Object;
 
-      sut.RegisterScore(player, ScoreCategory.Aces, new List<int> { 1, 1, 1, 1, 1 });
+      sut.RegisterScore(player, ScoreCategory.Aces, faceValues);
 
       CategoryScore actual = sut.GetScore(player, ScoreCategory.Aces);
 

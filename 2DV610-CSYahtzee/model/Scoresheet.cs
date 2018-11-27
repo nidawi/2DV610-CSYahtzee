@@ -46,7 +46,7 @@ namespace CSYahtzee.model
         throw new ArgumentNullException();
 
       CategoryScore categoryScore = new CategoryScore(a_scoreCatagory);
-      int score = m_scoreFactory.GetScoreCalculator(a_scoreCatagory).CalculateScore((IReadOnlyList<int>)a_faceValues);
+      int score = m_scoreFactory.GetScoreCalculator(a_scoreCatagory).CalculateScore(a_faceValues);
       categoryScore.Set(score, a_faceValues);
 
       Dictionary<ScoreCategory, CategoryScore> playerScore = new Dictionary<ScoreCategory, CategoryScore>();
@@ -60,18 +60,25 @@ namespace CSYahtzee.model
       if (a_player == null)
         throw new ArgumentNullException();
 
-      // TODO: refactor
-      var data = m_playerScores
-       .Where(a => a.Key == a_player)
-       .Select(e => e.Value)
-       .First();
-
-      var score = data
+      // TODO: Error handling.
+      var score = GetPlayerScore(a_player)
         .Where(e => e.Key == a_scoreCatagory)
         .Select(e => e.Value)
         .First();
 
       return score;
     }
+
+    private Dictionary<ScoreCategory, CategoryScore> GetPlayerScore(IPlayer a_player)
+    {
+      // TODO: Error handling.
+      var scoreDic = m_playerScores
+       .Where(a => a.Key == a_player)
+       .Select(e => e.Value)
+       .First();
+
+      return scoreDic;
+    }
+
   }
 }
