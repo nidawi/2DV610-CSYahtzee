@@ -82,6 +82,46 @@ namespace CSYahtzee.Tests.model
       );
     }
 
+    [Fact]
+    public void GetScoreShouldShouldReturnMultipleScoreCategoryObjects()
+    {
+      sut = new Scoresheet(MockedFactory.Object);
+
+      // TODO: refactor.
+      CategoryScore expected1 = new CategoryScore(ScoreCategory.Aces);
+      List<int> faceValues1 = new List<int>() { 1, 1, 1, 1, 1 };
+      expected1.Set(25, faceValues1);
+
+      CategoryScore expected2 = new CategoryScore(ScoreCategory.Twos);
+      List<int> faceValues2 = new List<int>() { 2, 2, 2, 2, 2 };
+      expected2.Set(25, faceValues2);
+
+      IPlayer player = MockedPlayerFactory.Object;
+
+      sut.RegisterScore(player, ScoreCategory.Aces, faceValues1);
+      sut.RegisterScore(player, ScoreCategory.Twos, faceValues2);
+
+      CategoryScore actual1 = sut.GetScore(player, ScoreCategory.Aces);
+      CategoryScore actual2 = sut.GetScore(player, ScoreCategory.Twos);
+
+      // TODO: probably refactor this Assert-statement.
+      Assert.True(expected1.Category == actual1.Category &&
+        expected1.FaceValues[0] == actual1.FaceValues[0] &&
+        expected1.FaceValues[1] == actual1.FaceValues[1] &&
+        expected1.FaceValues[2] == actual1.FaceValues[2] &&
+        expected1.FaceValues[3] == actual1.FaceValues[3] &&
+        expected1.FaceValues[4] == actual1.FaceValues[4] &&
+        expected1.Score == actual1.Score &&
+        expected2.Category == actual2.Category &&
+        expected2.FaceValues[0] == actual2.FaceValues[0] &&
+        expected2.FaceValues[1] == actual2.FaceValues[1] &&
+        expected2.FaceValues[2] == actual2.FaceValues[2] &&
+        expected2.FaceValues[3] == actual2.FaceValues[3] &&
+        expected2.FaceValues[4] == actual2.FaceValues[4] &&
+        expected2.Score == actual2.Score
+      );
+    }
+
     private Mock<CSYahtzee.model.rules.IScoreCalculator> MockedCalculator
     {
       get
