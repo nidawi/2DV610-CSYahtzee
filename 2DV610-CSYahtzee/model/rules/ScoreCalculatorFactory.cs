@@ -47,7 +47,7 @@ namespace CSYahtzee.model.rules
         case ScoreCategory.Chance:
           return new ChanceCalculator();
         default:
-          throw new NotImplementedException();
+          throw new ArgumentException();
       }
     }
   }
