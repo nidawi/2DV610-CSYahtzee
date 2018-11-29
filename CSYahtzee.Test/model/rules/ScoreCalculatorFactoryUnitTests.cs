@@ -43,7 +43,7 @@ namespace CSYahtzee.Tests.model.rules
       
       Assert.Throws<ArgumentException>(delegate ()
       {
-        sut.GetScoreCalculator(ScoreCategory.Illegal);
+        var actual = sut.GetScoreCalculator(ScoreCategory.Illegal);
       });
     }
   }

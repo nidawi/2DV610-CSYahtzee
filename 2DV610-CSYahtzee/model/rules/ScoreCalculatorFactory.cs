@@ -46,6 +46,7 @@ namespace CSYahtzee.model.rules
           return new YahtzeeCalculator();
         case ScoreCategory.Chance:
           return new ChanceCalculator();
+
         default:
           throw new ArgumentException();
       }
