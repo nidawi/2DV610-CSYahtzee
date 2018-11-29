@@ -67,6 +67,14 @@ namespace CSYahtzee.Tests.model
       Assert.False(actual);
     }
 
+    [Fact]
+    public void LockedDieShouldReturnTrue()
+    {
+      bool actual = sut.Locked;
+
+      Assert.True(actual);
+    }
+
     // helper methods
 
     private void AssertDieHasAcceptableValue()
