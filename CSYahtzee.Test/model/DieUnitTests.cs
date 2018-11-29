@@ -59,6 +59,14 @@ namespace CSYahtzee.Tests.model
       Assert.True(sut.HasRolled);
     }
 
+    [Fact]
+    public void DieIsLockedShouldReturnFalsePerDefault()
+    {
+      bool actual = sut.IsLocked;
+
+      Assert.False(actual);
+    }
+
     // helper methods
 
     private void AssertDieHasAcceptableValue()
