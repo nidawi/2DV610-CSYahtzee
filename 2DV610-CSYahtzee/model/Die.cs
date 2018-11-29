@@ -9,6 +9,7 @@ namespace CSYahtzee.model
   public class Die : IDie
   {
     private int m_faceValue;
+    private bool m_locked;
     private Random m_randomizer = null;
 
     /// <summary>
@@ -32,7 +33,11 @@ namespace CSYahtzee.model
     /// </summary>
     public bool HasRolled => m_faceValue > 0;
 
-    public bool Locked => false;
+    public bool Locked
+    {
+      get => m_locked;
+      set => m_locked = value;
+    }
 
     /// <summary>
     /// Default construtor.
@@ -40,6 +45,7 @@ namespace CSYahtzee.model
     public Die()
     {
       m_faceValue = 0;
+      m_locked = false;
       m_randomizer = new Random();
     }
 
