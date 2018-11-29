@@ -23,7 +23,10 @@ namespace CSYahtzee.model
     SmallStraight,
     LargeStraight,
     Yahtzee,
-    Chance
+    Chance,
+
+    // Extra
+    Illegal
   }
 
   public class Scoresheet : IScoresheet

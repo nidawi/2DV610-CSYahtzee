@@ -35,5 +35,16 @@ namespace CSYahtzee.Tests.model.rules
       IScoreCalculator actual = sut.GetScoreCalculator(a_scoreCategory);
       Assert.True(actual.GetType() == a_type);
     }
+
+    [Fact]
+    public void ShouldThrowExceptionIfGivenIllegalScoreCategory()
+    {
+      sut = new ScoreCalculatorFactory();
+      
+      Assert.Throws<ArgumentException>(delegate ()
+      {
+        sut.GetScoreCalculator(ScoreCategory.Illegal);
+      });
+    }
   }
 }
