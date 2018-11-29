@@ -29,7 +29,10 @@ namespace CSYahtzee.model
     
     public int Score
     {
-      get => m_score.HasValue ? m_score.Value : throw new NullReferenceException(); // TODO: Still need to test what happens if score isn't set.
+      get => m_score.HasValue ?
+        m_score.Value :
+        throw new NullReferenceException();
+
       private set
       {
         if (value < 0)
