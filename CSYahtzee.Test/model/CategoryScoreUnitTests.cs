@@ -112,6 +112,17 @@ namespace CSYahtzee.Tests.model
     }
 
     [Fact]
+    public void ShouldThrowExceptionIfNoScoreIsSet()
+    {
+      sut = new CategoryScore(ScoreCategory.Aces);
+
+      Assert.Throws<NullReferenceException>(delegate ()
+      {
+        int score = sut.Score;
+      });
+    }
+
+    [Fact]
     public void ShouldReturnGivenFaceValues()
     {
       int i = 0;
