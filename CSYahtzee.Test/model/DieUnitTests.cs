@@ -77,7 +77,7 @@ namespace CSYahtzee.Tests.model
     }
 
     [Fact]
-    public void LockedDieThrowsWhenRolled()
+    public void LockedDieShouldThrowWhenRolled()
     {
       sut.Locked = true;
 

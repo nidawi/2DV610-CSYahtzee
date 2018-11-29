@@ -54,6 +54,8 @@ namespace CSYahtzee.model
     /// </summary>
     public void Roll()
     {
+      if (Locked)
+        throw new DieLockedException();
       FaceValue = m_randomizer.Next(1, 6);
     }
   }
