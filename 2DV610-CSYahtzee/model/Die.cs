@@ -52,10 +52,12 @@ namespace CSYahtzee.model
     /// <summary>
     /// Rolls the die and sets its face value.
     /// </summary>
+    /// <exception cref="DieLockedException">Attempting to roll a locked die.</exception>
     public void Roll()
     {
       if (Locked)
         throw new DieLockedException();
+
       FaceValue = m_randomizer.Next(1, 6);
     }
   }
