@@ -71,13 +71,12 @@ namespace CSYahtzee.Tests.model
     public void LockedDieShouldReturnTrue()
     {
       sut.Locked = true;
-
       bool actual = sut.Locked;
 
       Assert.True(actual);
     }
 
-    // helper methods
+    // Helper methods
 
     private void AssertDieHasAcceptableValue()
     {
