@@ -10,7 +10,7 @@ namespace CSYahtzee.model
   {
     private int m_faceValue;
     private bool m_locked;
-    private Random m_randomizer = null;
+    private Random m_randomizer = null; // Random is a system class and thus not our responsibility.
 
     /// <summary>
     /// Returns the current value of the die.

@@ -76,6 +76,17 @@ namespace CSYahtzee.Tests.model
       Assert.True(actual);
     }
 
+    [Fact]
+    public void LockedDieThrowsWhenRolled()
+    {
+      sut.Locked = true;
+
+      Assert.Throws<DieLockedException>(delegate ()
+      {
+        sut.Roll();
+      });
+    }
+
     // Helper methods
 
     private void AssertDieHasAcceptableValue()

@@ -10,4 +10,5 @@ namespace CSYahtzee.model
   public class InvalidDiceCountException : Exception { }
   public class PlayernameTooShortException : Exception { }
   public class InvalidDieException : Exception { }
+  public class DieLockedException : Exception { }
 }
