@@ -32,7 +32,7 @@ namespace CSYahtzee.model
     /// </summary>
     public bool HasRolled => m_faceValue > 0;
 
-    public bool IsLocked => false;
+    public bool Locked => false;
 
     /// <summary>
     /// Default construtor.
